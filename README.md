@@ -133,5 +133,3 @@ bench remove-app erpnext_oob
 #### License
 
 MIT
-
-MIT
