@@ -151,6 +151,16 @@
   "value": "SELECT"
  },
  {
+   "doc_type": "Item Customer Detail",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "ref_code",
+   "modified": "2021-08-07 19:42:47.250230",
+   "name": "Item Customer Detail-ref_code-label",
+   "property": "label",
+   "value": "Customer Part Number"
+  },
+ {
   "doc_type": "Sales Order",
   "doctype": "Property Setter",
   "doctype_or_field": "DocField",
