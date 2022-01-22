@@ -1126,3 +1126,7 @@ Nov 2023,2023年11月
 Dec 2023,2023年12月
 Chart Name,图表名称
 Add / Remove Columns,添加 / 移除列
+"If source warehouse selected then system will create the material request with type Material Transfer from Source to Target warehouse. If not selected then will create the material request with type Purchase for the target warehouse.",如果指定转出仓且有相应数量，系统会创建自转出仓至收料仓调拨类型的物料需求，否则将针对收料仓创建采购类型的物料需求
+IQC,来料检验
+IPQC,制程检验
+OQC,出货检验

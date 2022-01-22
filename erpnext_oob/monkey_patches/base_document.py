@@ -1,4 +1,5 @@
 import frappe
+from frappe.utils import cstr
 from frappe.model.base_document import BaseDocument
 import json
 
@@ -23,5 +24,35 @@ def get_submit_username(self):
     except:
         pass
 
+def _validate_selects(self):
+    if frappe.flags.in_import:
+        return
+
+    for df in self.meta.get_select_fields():
+        if df.fieldname=="naming_series" or not (self.get(df.fieldname) and df.options):
+            continue
+
+        options = (df.options or "").split("\n")
+        
+        #支持分号(;)分隔的值与标签，以解决下拉值一词多义问题
+        options = [o.split(";")[0] for o in options if o]
+        # if only empty options
+        if not filter(None, options):
+            continue
+
+        # strip and set
+        self.set(df.fieldname, cstr(self.get(df.fieldname)).strip())
+        value = self.get(df.fieldname)
+
+        if value not in options and not (frappe.flags.in_test and value.startswith("_T-")):
+            # show an elaborate message
+            prefix = _("Row #{0}:").format(self.idx) if self.get("parentfield") else ""
+            label = _(self.meta.get_label(df.fieldname))
+            comma_options = '", "'.join(_(each) for each in options)
+
+            frappe.throw(_('{0} {1} cannot be "{2}". It should be one of "{3}"').format(prefix, label,
+                value, comma_options))
+
 BaseDocument.get_owner_username = get_owner_username
 BaseDocument.get_submit_username = get_submit_username
+BaseDocument._validate_selects = _validate_selects

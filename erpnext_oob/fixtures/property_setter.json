@@ -151,6 +151,16 @@
   "value": "SELECT"
  },
  {
+   "doc_type": "DocPerm",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "permlevel",
+   "modified": "2022-01-08 19:42:47.250230",
+   "name": "DocPerm-permlevel-label",
+   "property": "label",
+   "value": "Perm Level"
+  },
+ {
    "doc_type": "Item Customer Detail",
    "doctype": "Property Setter",
    "doctype_or_field": "DocField",
@@ -249,5 +259,15 @@
   "name": "Contact-last_name-hidden",
   "property": "hidden",
   "value": "1"
- } 
+ },
+ {
+  "doc_type": "Qulity Inspection",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "inspection_type",
+  "modified": "2022-01-22 19:42:47.535662",
+  "name": "Quality Inspection-inspection_type",
+  "property": "options",
+  "value": "\nIncoming;IQC\nOutgoing;OQC\nIn Process;IPQC"
+ }  
 ]
