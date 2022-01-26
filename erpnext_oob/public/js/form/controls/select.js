@@ -13,7 +13,7 @@
 
 				if (is_value_null && is_label_null) {
 					//支持分号(;)分隔的值与标签，以解决下拉值一词多义问题
-					if (v.includes(";")) {
+					if (v && typeof v ==='string' && v.includes(";")) {
 						const value_arr = v.split(";");
 						value = value_arr[0];
 						label = __(value_arr.slice(-1)[0]);

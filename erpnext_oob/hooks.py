@@ -172,13 +172,11 @@ override_whitelisted_methods = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+ 	"Customer": {
+ 		"validate": "erpnext_oob.doc_events.pinyin_name"
+	}
+}
 
 # Scheduled Tasks
 # ---------------

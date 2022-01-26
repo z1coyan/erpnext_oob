@@ -51,8 +51,8 @@
   "translatable": 0,
   "unique": 0,
   "width": null
- },
- {
+  },
+  {
     "doctype": "Custom Field",
     "dt": "Print Format",
     "fieldname": "condition_for_default",
@@ -75,5 +75,16 @@
     "description":"Smaller number higher priority",
     "modified": "2021-08-07 22:12:02.049023",
     "name": "print-format_priority"
-   }
+   },
+   {
+      "doctype": "Custom Field",
+      "dt": "Customer",
+      "fieldname": "pinyin_name",
+      "fieldtype": "Data",
+      "insert_after": "customer_name",
+      "label": "PinYin Name",
+      "description":"For link field filter",
+      "modified": "2022-01-23 22:12:02.049023",
+      "name": "Customer-pinyin_name"
+     }
 ]
