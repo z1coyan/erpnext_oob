@@ -328,8 +328,8 @@ const MyControlAutocomplete = frappe.ui.form.ControlAutocomplete.extend({
     // 添加的方法
     set_formatted_input: function(value) {
 		var me = this
-		me.$input && me.$input.attr("data-value", value === undefined ? '' : value)
-		me.$input && me.$input.val(me.format_for_input(__(value)));
+		value && me.$input && me.$input.attr("data-value", value === undefined ? '' : value)
+		value && me.$input && me.$input.val(me.format_for_input(__(value)));
 	},
 
 	// 获取本来的值
