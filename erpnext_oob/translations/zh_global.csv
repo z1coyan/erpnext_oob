@@ -670,9 +670,8 @@ No changes in document,未做任何修改
 New,新建
 Set all private,设为私有
 Set all public,设为公开
-Assign to me,分派给自己
-Assign To,分派给
-Complete By,完成日期
+Assign to me,自己认领
+Assign To,执行人
 Priority,优先级
 Low,低
 Medium,中
@@ -728,7 +727,7 @@ Token Cache,令牌缓存
 No Stock Available Currently,无可用库存
 Sales Order has been submitted successfully,销售订单已成功提交
 Communication,沟通
-Add to ToDo,新增待办事项
+Add to ToDo,新增待办
 Assigning...,分派中...
 Mandatory fields required in {0},{0}中有必填字段
 "Mandatory fields required in table {0}, Row {1}",表{0}第{1}行有必填字段
@@ -1020,7 +1019,7 @@ Once opening stocks are updated, you can create transactions like manufacturing 
 Based on the various stock transactions, you can get a host of one-click Stock Reports in ERPNext like Stock Ledger, Stock Balance, Projected Quantity, and Ageing analysis.","
 # 查看库存报表
 在系统中产生了各种库存业务(物料移动)记录后，即可查看各种库存报表，如物料凭证(库存移动明细)，库存余额(收发存汇总表),又称实时库存，库龄，预期可用库存等"
-Build,后台组件
+Build,管理后台
 Make a Sales Tax Template,新建一个税费模板
 Assign a user,分派一个用户
 File View,文件视图

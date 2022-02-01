@@ -1,5 +1,15 @@
 [
  {
+    "doc_type": "ToDo",
+    "doctype": "Property Setter",
+    "doctype_or_field": "DocField",
+    "field_name": "owner",
+    "modified": "2022-02-01 19:42:46.943779",
+    "name": "ToDo-owner-label",
+    "property": "label",
+    "value": "Completed By"
+ },
+ {
     "doc_type": "Quality Meeting Minutes",
     "doctype": "Property Setter",
     "doctype_or_field": "DocField",
@@ -58,6 +68,26 @@
   "name": "Task-weight-label",
   "property": "label",
   "value": "Weightage"
+ },
+ {
+  "doc_type": "Task Type",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "weight",
+  "modified": "2022-02-01 19:42:47.029981",
+  "name": "Task-Type-weight-label",
+  "property": "label",
+  "value": "Weightage"
+ },
+ {
+  "doc_type": "Project",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "margin",
+  "modified": "2022-02-01 19:42:47.029981",
+  "name": "Project-margin-label",
+  "property": "label",
+  "value": "Gross Margin"
  },
  {
   "doc_type": "Purchase Invoice Item",
