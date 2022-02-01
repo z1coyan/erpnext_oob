@@ -7,4 +7,4 @@ var MyCalendar = frappe.views.Calendar.extend({
     }
 })
 
-frappe.views.Calendar = MyCalendar
+//frappe.views.Calendar = MyCalendar
