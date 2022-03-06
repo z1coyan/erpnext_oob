@@ -83,6 +83,7 @@
       "fieldtype": "Data",
       "insert_after": "customer_name",
       "label": "PinYin Name",
+      "hidden": 1,
       "description":"For link field filter",
       "modified": "2022-01-23 22:12:02.049023",
       "name": "Customer-pinyin_name"
