@@ -1,4 +1,5 @@
 import frappe
+from frappe import _
 from frappe.utils import cstr
 from frappe.model.base_document import BaseDocument
 import json

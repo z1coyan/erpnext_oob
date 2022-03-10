@@ -319,5 +319,25 @@
   "name": "Quality Inspection-inspection_type",
   "property": "options",
   "value": "\nIncoming;IQC\nOutgoing;OQC\nIn Process;IPQC"
- }  
+ },
+ {
+   "doc_type": "Opportunity",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "opportunity_type",
+   "modified": "2022-03-10 19:42:47.535662",
+   "name": "Opportunity-opportunity_type",
+   "property": "default",
+   "value": "销售"
+  },
+  {
+   "doc_type": "Opportunity",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "sales_stage",
+   "modified": "2022-03-10 19:42:47.535662",
+   "name": "Opportunity-sales_stage",
+   "property": "default",
+   "value": "有意向"
+  }      
 ]
