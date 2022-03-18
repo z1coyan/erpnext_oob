@@ -22,14 +22,18 @@ class MyPermissionEngine  extends frappe.PermissionEngine{
 	// fisher 取设在data-value属性上的实际值而不是显示标签值val()
 	get_doctype() {
 		let doctype = this.doctype_select.attr("data-value");
-		return this.doctype_select.get(0).selectedIndex == 0 ? null : doctype;
+		return !this.doctype_select.val()? null : doctype;
 	}
 
 	get_role() {
 		let role = this.role_select.attr("data-value");
-		return this.role_select.get(0).selectedIndex == 0 ? null : role;
+		return !this.role_select.val()? null : role;
 	}
 
+	add_check(cell, d, fieldname, label, description = "") {
+		label = fieldname === "select"? "Select Link": label;
+		return super.add_check(cell, d, fieldname, label, description)
+	}
 	// show_add_rule() {
 	// 	this.page.set_primary_action(
 	// 		__("Add A New Rule"),

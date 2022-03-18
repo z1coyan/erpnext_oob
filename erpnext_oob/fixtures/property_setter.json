@@ -339,5 +339,15 @@
    "name": "Opportunity-sales_stage",
    "property": "default",
    "value": "有意向"
-  }      
+  },
+  {
+   "doc_type": "DocPerm",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "select",
+   "modified": "2022-03-18 19:42:47.535662",
+   "name": "DocPerm-select",
+   "property": "label",
+   "value": "Select Link"
+  }            
 ]
