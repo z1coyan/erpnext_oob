@@ -306,7 +306,7 @@ const MyControlLink = frappe.ui.form.ControlLink.extend({
 		if(this.get_status()==='Write') {
 			return this.parse ? this.parse(value) : value;
 		} else {
-			return value || undefined;
+			return value? value: this.value || null;
 		}
 	},
 })
