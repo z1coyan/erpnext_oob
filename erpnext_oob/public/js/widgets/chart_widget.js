@@ -10,7 +10,7 @@ class MyChartWidget extends ChartWidget {
 frappe.widget.widget_factory.chart = MyChartWidget
 
 frappe.dashboard_utils.render_chart_filters = function(filters, button_class, container, append) {
-        console.log('override renderchartfilter');
+        //console.log('override renderchartfilter');
 		filters.forEach(filter => {
 			let icon_html = '', filter_class = '';
 
