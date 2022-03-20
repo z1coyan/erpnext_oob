@@ -117,7 +117,7 @@ standard_queries = {
 }
 override_whitelisted_methods = {
  	"erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_charts_for_country": "erpnext_oob.localize.localize.get_charts_for_country",
-    "erpnext.stock.get_item_details.get_item_details":"erpnext_oob.utils.new_get_item_details",
+    #"erpnext.stock.get_item_details.get_item_details":"erpnext_oob.utils.new_get_item_details",
     "erpnext.accounts.doctype.pricing_rule.pricing_rule.apply_pricing_rule":"erpnext_oob.utils.new_apply_pricing_rule"
 }
 # Home Pages
