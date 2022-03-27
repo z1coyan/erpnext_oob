@@ -45,7 +45,7 @@ account_name,parent_account,account_number,parent_account_number,is_group,accoun
 长期股权投资,资产,1511,1000,,,Asset
 固定资产,资产,1601,1000,,Fixed Asset,Asset
 累计折旧,资产,1602,1000,,Accumulated Depreciation,Asset
-在建工程,资产,1604,1000,,Capital Work in Progress,Asset
+在建工程,资产,1604,1000,,Capital Work in Progress,Capital Work in Progress
 工程物资,资产,1605,1000,1,Fixed Asset,Asset
 专用材料,工程物资,160501,1605,,Fixed Asset,Asset
 专用设备,工程物资,160502,1605,,Fixed Asset,Asset
