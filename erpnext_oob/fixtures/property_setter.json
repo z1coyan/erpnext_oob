@@ -321,6 +321,36 @@
   "value": "\nIncoming;IQC\nOutgoing;OQC\nIn Process;IPQC"
  },
  {
+   "doc_type": "Asset Movement",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "purpose",
+   "modified": "2022-01-22 19:42:47.535662",
+   "name": "Asset Movement-purpose_options",
+   "property": "options",
+   "value": "\nIssue;Asset Issue\nReceipt;Asset Receipt\nTransfer;Asset Transfer"
+  },
+  {
+   "doc_type": "Asset Movement",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "purpose",
+   "modified": "2022-01-22 19:42:47.535662",
+   "name": "Asset Movement-purpose-in_list_view",
+   "property": "in_list_view",
+   "value": "1"
+  },
+  {
+   "doc_type": "Asset Movement",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "purpose",
+   "modified": "2022-01-22 19:42:47.535662",
+   "name": "Asset Movement-purpose_in_standard_filter",
+   "property": "in_standard_filter",
+   "value": "1"
+  }, 
+ {
    "doc_type": "Opportunity",
    "doctype": "Property Setter",
    "doctype_or_field": "DocField",

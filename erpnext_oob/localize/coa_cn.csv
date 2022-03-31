@@ -105,7 +105,7 @@ account_name,parent_account,account_number,parent_account_number,is_group,accoun
 暂估库存,负债,2801,2000,,Stock Received But Not Billed,Liability
 暂估库存,负债,280101,2000,,Stock Received But Not Billed,Liability
 暂估服务,负债,280102,2000,,Stock Received But Not Billed,Liability
-暂估资产,负债,280103,2000,,Stock Received But Not Billed,Liability
+暂估资产,负债,280103,2000,,Asset Received But Not Billed,Liability
 实收资本,所有者权益,3001,3000,,,Equity
 资本公积,所有者权益,3002,3000,,,Equity
 盈余公积,所有者权益,3101,3000,1,,Equity
