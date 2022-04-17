@@ -1,5 +1,6 @@
 import frappe
 from frappe import _
+from frappe.model.document import Document
 from frappe.core.doctype.data_import import importer
 from frappe.core.doctype.data_import.importer import ImportFile,INVALID_VALUES,MAX_ROWS_IN_PREVIEW
 from frappe.core.doctype.data_import.importer import build_fields_dict_for_column_matching as old_build_fields_dict_for_column_matching
@@ -11,6 +12,15 @@ def new_build_fields_dict_for_column_matching(parent_doctype):
     """支持中文字段标签"""
     out = old_build_fields_dict_for_column_matching(parent_doctype)
 
+    #将dict转为df对象，避免导入DocType时importer Header 740行 list(sort(doctypes)报 TypeError: unhashable type: '_dict'错误
+    child_table_df_map = {}
+    for label, field in out.items():
+        if hasattr(field, "child_table_df") and field.child_table_df and not isinstance(field.child_table_df, Document):
+            fieldname = field.child_table_df.get('fieldname') 
+            if  not fieldname in child_table_df_map:
+                child_table_df_map[fieldname] = frappe.get_doc('DocField', field.child_table_df) 
+            field.child_table_df = child_table_df_map.get(fieldname)
+            
     if frappe.translate.get_user_lang != 'en':
         to_be_trans = {label: field for (label, field) in out.items() if '.' not in label}
         for label, field in to_be_trans.items():
