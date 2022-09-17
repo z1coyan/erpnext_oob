@@ -98,14 +98,13 @@ fixtures = [
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
-app_include_js = "/assets/js/erpnext_oob.min.js"
+app_include_js = ["erpnext_oob.bundle.js"]
 page_js = {
 	"permission-manager": "public/js/hooks/page/permission_manager.js",
     "dashboard-view": "public/js/hooks/page/dashboard.js",
     "print": "public/js/hooks/page/print.js"
 }
 doctype_js = {
-	"User" : "public/js/hooks/doctype/user.js"
 }
 
 setup_wizard_requires = "assets/erpnext_oob/js/setup_wizard.js"
