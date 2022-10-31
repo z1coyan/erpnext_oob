@@ -1019,7 +1019,7 @@ Once opening stocks are updated, you can create transactions like manufacturing 
 Based on the various stock transactions, you can get a host of one-click Stock Reports in ERPNext like Stock Ledger, Stock Balance, Projected Quantity, and Ageing analysis.","
 # 查看库存报表
 在系统中产生了各种库存业务(物料移动)记录后，即可查看各种库存报表，如物料凭证(库存移动明细)，库存余额(收发存汇总表),又称实时库存，库龄，预期可用库存等"
-Build,管理后台
+Build,开发
 Make a Sales Tax Template,新建一个税费模板
 Assign a user,分派一个用户
 File View,文件视图
