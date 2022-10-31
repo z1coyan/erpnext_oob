@@ -1131,7 +1131,7 @@ IPQC,制程检验
 OQC,出货检验
 PinYin Name,助记码
 Select Link,读(链接字段)
-'Opening',期初,
+'Opening',期初
 Selected Serial Numbers,已选序列号
 Debit in Account Currency,借方(科目币别)
 Credit in Account Currency,贷方(科目币别)

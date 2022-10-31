@@ -103,12 +103,20 @@ frappe.call('erpnext_oob.localize.sync_exchange_rate.sync_exchange_rate')
 1.新安装
 1.1、获取对应版本APP
 
+13 版本
+
 bench get-app https://gitee.com/yuzelin/erpnext_oob.git
+
+14版本
+bench get-app --branch version-14 https://gitee.com/yuzelin/erpnext_oob.git
 
 1.2、安装APP(有多个站点且未设默认站点的请加--site参数）
 
 bench install-app erpnext_oob
 
+bench clear-cache && bench clear-website-cache
+
+sudo supervisorctl restart all
 升级
 2.1、bench update 命令
 
