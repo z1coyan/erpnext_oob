@@ -87,6 +87,7 @@ ERPNext开箱即用，主要包括以下功能
 4.1 单据级打印格式自动默认，标准功能只支持按单据类型自动默认打印格式，新功能中在打印格式中增加了设为默认格式的条件和优先级两个字段，允许用户通过Python表达式为满足条件的单据分派默认的打印格式，如按不同的物料移动类型创建相应的打印格式。
 
 4.2 客户单据类型增加了一个隐藏的助记码(基于客户名自动生成全拼与首字母拼，如富士康科技会生成 fushikangkeji fskkj),在输入客户链接字段时，可基于助记码，输入如fsk或shika即可自动过滤出这个客户名称
+（需在定制表单中为客户单据类型在搜索字段中增加pinyin_name字段)
 
 4.3 增加了自动从网站https://www.boc.cn/sourcedb/whpj/下载并更新货币汇率的函数sync_exchange_rate, 可新增这一行代码
 frappe.call('erpnext_oob.localize.sync_exchange_rate.sync_exchange_rate')

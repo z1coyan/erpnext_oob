@@ -7,7 +7,7 @@ erpnext.stock.StockController.prototype.show_general_ledger = function() {
                 from_date: me.frm.doc.posting_date,
                 to_date: moment(me.frm.doc.modified).format('YYYY-MM-DD'),
                 company: me.frm.doc.company,
-                //group_by: "Group by Voucher (Consolidated)",    //fisher 与系统默认该参数有冲突，帮在此不赋值
+                //group_by: "Group by Voucher (Consolidated)",    //fisher 与系统默认该参数有冲突，在此不赋值
                 show_cancelled_entries: me.frm.doc.docstatus === 2
             };
             frappe.set_route("query-report", "General Ledger");

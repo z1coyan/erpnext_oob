@@ -24,17 +24,16 @@ $(document).bind('toolbar_setup', function() {
     // $('.dropdown-help ul li:lt(6)').remove()
 });
 
-// 日历
-var MyCalendar = frappe.views.Calendar.extend({
-    setup_options: function(defaults) {
-        this._super(defaults);
+
+
+frappe.views.Calendar = class Calendar extends frappe.views.Calendar {
+    setup_options(defaults) {
+        super.setup_options(defaults);
         if (this.cal_options.locale == 'zh') {
             this.cal_options.locale = 'zh-cn'
         }
     }
-})
-
-frappe.views.Calendar = MyCalendar
+}
 
 
 // 列表鼠标悬停中文被转码 其实就改了一行

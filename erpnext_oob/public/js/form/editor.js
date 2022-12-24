@@ -1,6 +1,6 @@
 // 用户界面查看角色的权限弹框翻译
-const MyRoleEditor = frappe.RoleEditor.extend({
-    show_permissions: function(role) {
+frappe.RoleEditor = class RoleEditor extends frappe.RoleEditor {
+    show_permissions(role) {
 		// show permissions for a role
 		var me = this;
 		if(!this.perm_dialog)
@@ -12,7 +12,6 @@ const MyRoleEditor = frappe.RoleEditor.extend({
 			callback: function(r) {
 				var $body = $(me.perm_dialog.body);
 				// TODO fix the overflow issue and also display perms like report, import, etc.
-
 				$body.append('<table class="user-perm"><thead><tr>'
 					+ '<th style="text-align: left">' + __('Document Type') + '</th>'
 					+ '<th>' + __('Level') + '</th>'
@@ -59,8 +58,5 @@ const MyRoleEditor = frappe.RoleEditor.extend({
 				me.perm_dialog.show();
 			}
 		});
-
-	},
-})
-
-frappe.RoleEditor = MyRoleEditor
+	}
+}

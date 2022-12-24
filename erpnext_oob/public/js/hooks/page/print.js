@@ -1,4 +1,4 @@
-class MyPrintPreview  extends frappe.ui.form.PrintView{
+frappe.ui.form.PrintView = class PrintPreview  extends frappe.ui.form.PrintView {
     show(frm) {
 		this.frm = frm;
 		this.set_title();
@@ -37,5 +37,3 @@ class MyPrintPreview  extends frappe.ui.form.PrintView{
         }
     }
 }
-
-frappe.ui.form.PrintView = MyPrintPreview;

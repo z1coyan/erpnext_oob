@@ -9,3 +9,9 @@ def pinyin_name(doc, method):
         p =lazy_pinyin(doc.customer_name,errors='ignore')
         #全拼 和 首字母拼
         doc.pinyin_name = f"{''.join(p)} {''.join(a[0] for a in p)}"
+
+def contact_image_handling(doc, method):
+    if method == "before_validate" and not doc.image:
+        doc.image = "dummy_image"
+    elif method == "before_save" and doc.image == "dummy_image":
+        doc.image = None

@@ -1,6 +1,6 @@
-const MyControlTable = frappe.ui.form.ControlTable.extend({
-	make: function() {
-		this._super();
+frappe.ui.form.ControlTable = class ControlTable extends frappe.ui.form.ControlTable {
+	make() {
+		super.make();
 		this.$wrapper.off('paste', ':text');
 		this.$wrapper.on('paste', ':text', e => {
 			const table_field = this.df.fieldname;
@@ -76,6 +76,4 @@ const MyControlTable = frappe.ui.form.ControlTable.extend({
 			return false; // Prevent the default handler from running.
 		});
 	}
-});
-
-frappe.ui.form.ControlTable = MyControlTable;
+};

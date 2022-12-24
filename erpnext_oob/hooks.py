@@ -175,6 +175,10 @@ override_whitelisted_methods = {
 doc_events = {
  	"Customer": {
  		"validate": "erpnext_oob.doc_events.pinyin_name"
+	},
+    "Contact": {
+ 		"before_validate": "erpnext_oob.doc_events.contact_image_handling",
+        "before_save": "erpnext_oob.doc_events.contact_image_handling"
 	}
 }
 
@@ -226,26 +230,7 @@ doc_events = {
 # User Data Protection
 # --------------------
 
-user_data_fields = [
-	{
-		"doctype": "{doctype_1}",
-		"filter_by": "{filter_by}",
-		"redact_fields": ["{field_1}", "{field_2}"],
-		"partial": 1,
-	},
-	{
-		"doctype": "{doctype_2}",
-		"filter_by": "{filter_by}",
-		"partial": 1,
-	},
-	{
-		"doctype": "{doctype_3}",
-		"strict": False,
-	},
-	{
-		"doctype": "{doctype_4}"
-	}
-]
+
 
 # Authentication and authorization
 # --------------------------------
