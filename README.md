@@ -1,9 +1,9 @@
-## ERPNext Out Of Box
+# ERPNext Out Of Box
 
 ERPNext Out of Box
 
 #### License
-ERPNext开箱即用，主要包括以下功能
+## ERPNext开箱即用，主要包括以下功能
 
 本项目解决标准控件翻译问题参考学习了破匣求禅/EBCLocal，源项目地址 https://gitee.com/petel_zhang/EBCLocal，
 在此特别感谢
@@ -103,29 +103,33 @@ frappe.call('erpnext_oob.localize.sync_exchange_rate.sync_exchange_rate')
 1.新安装
 1.1、获取对应版本APP
 
-13 版本
-
+### 13 版本
+```sh
 bench get-app https://gitee.com/yuzelin/erpnext_oob.git
-
-14版本
+```
+### 14版本
+```sh
 bench get-app --branch version-14 https://gitee.com/yuzelin/erpnext_oob.git
-
+```
 1.2、安装APP(有多个站点且未设默认站点的请加--site参数）
-
+```sh
 bench install-app erpnext_oob
-
+```
+```sh
 bench clear-cache && bench clear-website-cache
-
+```
+```sh
 sudo supervisorctl restart all
+```
 升级
 2.1、bench update 命令
-
+```sh
 bench update --apps erpnext_oob --pull --reset
-
+```
 2.2 重新编译JS等资源文件
-
+```sh
 bench build --app erpnext_oob --force
-
+```
 2.3 通过本应用中的插件机制向打印格式单据类型中新增两个字段(同步，新安装时不需要这一步，也可运行标准的bench migrate 命令，会对所有app作升级后同步数据库表处理)
 bench console
 In [6]: from frappe.utils.fixtures import sync_fixtures
@@ -134,13 +138,13 @@ In [7]: sync_fixtures('erpnext_oob')
 
 卸载
 3.1 从站点卸载 
-
+```sh
 bench uninstall-app erpnext_oob
-
+```
 3.2 从整个bench环境卸载,移除整个应用目录
-
+```sh
 bench remove-app erpnext_oob
-
+```
 欢迎提交问题和反馈建议。
 
 
