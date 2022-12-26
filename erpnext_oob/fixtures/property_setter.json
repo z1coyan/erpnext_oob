@@ -369,5 +369,15 @@
    "name": "Opportunity-sales_stage",
    "property": "default",
    "value": "有意向"
+  },
+  {
+   "doc_type": "Company",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "default_currency",
+   "modified": "2022-12-26 19:42:47.535662",
+   "name": "Company-default_currency",
+   "property": "default",
+   "value": "CNY"
   }   
 ]

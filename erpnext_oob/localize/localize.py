@@ -127,16 +127,17 @@ def set_item_group_account(company):
 					[_("Sub Assemblies"), '400101 - 基本生产成本'],
 					[_("Consumable"), '400101 - 基本生产成本'],
 					[_("Services"), '400102 - 辅助生产成本'],
-					[_("Products"), '5401 - 主营业务成本']
+					["产品展示", '5401 - 主营业务成本']
 				]:
 				warehouse_name = f'{wh_detail[0]} - {abbr}'		
 				account_name = 	f'{wh_detail[1]} - {abbr}'
-				item_group_obj = frappe.get_doc('Item Group', wh_detail[0])
-				item_group_obj.append('item_group_defaults',{
-					'company': company,
-					'expense_account': account_name
-				})
-				item_group_obj.save()
+				if frappe.db.exists("Item Group", wh_detail[0]):
+					item_group_obj = frappe.get_doc('Item Group', wh_detail[0])
+					item_group_obj.append('item_group_defaults',{
+						'company': company,
+						'expense_account': account_name
+					})
+					item_group_obj.save()
 	except:
 		pass
 

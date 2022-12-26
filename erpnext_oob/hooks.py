@@ -140,7 +140,7 @@ override_whitelisted_methods = {
 # ------------
 
 # before_install = "erpnext_oob.install.before_install"
-# after_install = "erpnext_oob.install.after_install"
+after_install = "erpnext_oob.install.after_install"
 
 # Desk Notifications
 # ------------------
@@ -179,6 +179,10 @@ doc_events = {
     "Contact": {
  		"before_validate": "erpnext_oob.doc_events.contact_image_handling",
         "before_save": "erpnext_oob.doc_events.contact_image_handling"
+	},
+    "Company": {
+ 		"after_insert": "erpnext_oob.doc_events.company_create_default_accounts",
+        "validate": "erpnext_oob.doc_events.company_create_default_accounts"
 	}
 }
 
