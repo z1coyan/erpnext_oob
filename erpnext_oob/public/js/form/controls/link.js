@@ -312,37 +312,48 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlLin
 	}
 }
 
-// frappe.ui.form.ControlAutocomplete = class ControlAutocomplete extends frappe.ui.form.ControlAutocomplete {
-// 	setup_awesomplete() {
-// 		const settings = super.setup_awesomplete() || {};
-// 		return Object.assign(settings, {
-// 			filter: function(item, input) {				
-// 				let hay = item.value;
-// 				//fisher 支持中英文检索
-// 				if (__(item.value) != item.value)	hay += __(item.value)
-// 				return Awesomplete.FILTER_CONTAINS(hay, input);
-// 			}
-// 		})
-// 	}
-//     // 添加的方法
-//     set_formatted_input(value) {
-// 		var me = this
-// 		value && me.$input && me.$input.attr("data-value", value === undefined ? '' : value)
-// 		value && me.$input && me.$input.val(me.format_for_input(__(value)));
-// 	}
+frappe.ui.form.ControlAutocomplete = class ControlAutocomplete extends frappe.ui.form.ControlAutocomplete {
+	setup_awesomplete() {
+		const settings = super.setup_awesomplete() || {};
+		return Object.assign(settings, {
+			filter: function(item, input) {				
+				let hay = item.value;
+				//fisher 支持中英文检索
+				if (__(item.value) != item.value)	hay += __(item.value)
+				return Awesomplete.FILTER_CONTAINS(hay, input);
+			}
+		})
+	}
+    // 添加的方法
+    set_formatted_input(value) {
+		var me = this
+		value && me.$input && me.$input.attr("data-value", value === undefined ? '' : value)
+		value && me.$input && me.$input.val(me.format_for_input(__(value)));
+	}
 
-// 	// 获取本来的值
-// 	get_value() {
-// 		let me = this
-// 		let real_value = me.doc ? me.doc[me.df['fieldname']] : (me.$input ? me.$input.attr("data-value") : undefined)
-// 		let value = real_value ? real_value : me.get_input_value();
-// 		if(this.get_status()==='Write') {
-// 			return this.parse ? this.parse(value) : value;
-// 		} else {
-// 			return value || undefined;
-// 		}
-// 	}
-// }
+	// 获取本来的值
+	get_value() {
+		let me = this
+		let real_value = me.$input && me.$input.attr("data-value") ? me.$input.attr("data-value") : (me.doc ? me.doc[me.df['fieldname']] : undefined)
+		let value = real_value ? real_value : me.get_input_value();
+		if(this.get_status()==='Write') {
+			return this.parse ? this.parse(value) : value;
+		} else {
+			return value || undefined;
+		}
+	}
+
+	get_parsed_value(value) {
+		let me = this;
+		if (me.doc){
+			let real_value = me.$input && me.$input.attr("data-value") ? me.$input.attr("data-value") : (me.doc ? me.doc[me.df['fieldname']] : undefined)
+			value = real_value ? real_value : me.get_input_value();
+		} else {
+			value = super.get_parsed_value(value);
+		}
+		return value;
+	}
+}
 
 // const MyControlMultiSelect = frappe.ui.form.ControlMultiSelect.extend({
 // 	get_awesomplete_settings() {
