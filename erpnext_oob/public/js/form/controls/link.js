@@ -297,6 +297,7 @@ frappe.ui.form.ControlLink = class ControlLink extends frappe.ui.form.ControlLin
 		var me = this
 		me.$input && me.$input.attr("data-value", value === undefined ? '' : value)
 		me.$input && me.$input.val(me.format_for_input(__(value)));
+		super.set_formatted_input(value);
 	}
 
 	// 获取本来的值
