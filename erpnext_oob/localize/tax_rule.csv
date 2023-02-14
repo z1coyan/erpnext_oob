@@ -1,6 +1,6 @@
 tax_category,tax_type,tax_template
-0%税率,Sales,0%销项税
-13%税率,Sales,13%销项税
-1%税率,Purchase,1%进项税
-13%税率,Purchase,13%进项税
-0%税率,Purchase,0%进项税
+0税率,Sales,0销项税
+13税率,Sales,13销项税
+1税率,Purchase,1进项税
+13税率,Purchase,13进项税
+0税率,Purchase,0进项税

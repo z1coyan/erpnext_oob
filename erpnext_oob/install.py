@@ -8,3 +8,4 @@ import frappe
 
 def after_install():
     frappe.db.set_value('System Settings','','enable_onboarding',0)
+    frappe.db.commit()

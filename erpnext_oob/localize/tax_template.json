@@ -1,15 +1,15 @@
 {
     "tax_categories": [
-        "0%税率",
-        "13%税率",
-        "1%税率"
+        "0税率",
+        "13税率",
+        "1税率"
     ],
     "chart_of_accounts": {
         "*": {
             "sales_tax_templates": [
                 {
-                    "title": "0%销项税",
-                    "tax_category": "0%税率",
+                    "title": "0销项税",
+                    "tax_category": "0税率",
                     "is_default": 0,
                     "taxes": [
                         {
@@ -22,8 +22,8 @@
                     ]
                 },
                 {
-                    "title": "13%销项税",
-                    "tax_category": "13%税率",
+                    "title": "13销项税",
+                    "tax_category": "13税率",
                     "is_default": 1,
                     "taxes": [
                         {
@@ -38,8 +38,8 @@
             ],
             "purchase_tax_templates": [
                 {
-                    "title": "0%进项税",
-                    "tax_category": "0%税率",
+                    "title": "0进项税",
+                    "tax_category": "0税率",
                     "is_default": 0,
                     "taxes": [
                         {
@@ -52,8 +52,8 @@
                     ]
                 },
                 {
-                    "title": "1%进项税",
-                    "tax_category": "1%税率",
+                    "title": "1进项税",
+                    "tax_category": "1税率",
                     "is_default": 0,
                     "taxes": [
                         {
@@ -66,8 +66,8 @@
                     ]
                 },
                 {
-                    "title": "13%进项税",
-                    "tax_category": "13%税率",
+                    "title": "13进项税",
+                    "tax_category": "13税率",
                     "is_default": 0,
                     "taxes": [
                         {
