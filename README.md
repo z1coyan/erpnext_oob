@@ -104,7 +104,7 @@ frappe.call('erpnext_oob.localize.sync_exchange_rate.sync_exchange_rate')
 1.新安装
 1.1、获取对应版本APP
 
-bench get-app https://gitee.com/yuzelin/erpnext_oob.git
+bench get-app https://gitee.com/yuzelin/erpnext_oob.git --branch version-14
 
 1.2、安装APP(有多个站点且未设默认站点的请加--site参数）
 

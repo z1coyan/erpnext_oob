@@ -164,9 +164,9 @@ after_install = "erpnext_oob.install.after_install"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Communication": "erpnext_oob.overrides.CustomCommunication"
+}
 
 # Document Events
 # ---------------
