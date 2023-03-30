@@ -9,4 +9,4 @@ def get_content(self, print_format=None):
         return self.content + self.get_attach_link(print_format)
     return self.content
 
-CommunicationEmailMixin.get_content = get_content
+#CommunicationEmailMixin.get_content = get_content
