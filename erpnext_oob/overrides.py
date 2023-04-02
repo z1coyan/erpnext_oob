@@ -1,3 +1,4 @@
+import frappe
 from frappe.core.doctype.communication.communication import Communication
 
 class CustomCommunication(Communication):
