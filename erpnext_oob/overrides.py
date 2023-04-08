@@ -10,3 +10,17 @@ class CustomCommunication(Communication):
         if print_format and view_link:
             return self.content + self.get_attach_link(print_format)
         return self.content
+
+@frappe.whitelist()
+def update_comment(name, content):
+	"""allow only owner to update comment"""
+	doc = frappe.get_doc("Comment", name)
+
+	if frappe.session.user not in ["Administrator", doc.owner]:
+		frappe.throw(_("Comment can only be edited by the owner"), frappe.PermissionError)
+	if 	doc.reference_doctype and doc.reference_name:
+		reference_doc = frappe.get_doc(doc.reference_doctype, doc.reference_name)	
+		doc.content = extract_images_from_html(reference_doc, content, is_private=True)
+	else:
+		doc.content = content
+	doc.save(ignore_permissions=True)        

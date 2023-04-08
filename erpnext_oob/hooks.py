@@ -115,6 +115,7 @@ standard_queries = {
 	"Report": "erpnext_oob.localize.queries.doctype_role_report_query"
 }
 override_whitelisted_methods = {
+    "frappe.desk.form.utils.update_comment": "erpnext_oob.overrides.update_comment",
  	"erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts.get_charts_for_country": "erpnext_oob.localize.localize.get_charts_for_country",
     #"erpnext.stock.get_item_details.get_item_details":"erpnext_oob.utils.new_get_item_details",
     "erpnext.accounts.doctype.pricing_rule.pricing_rule.apply_pricing_rule":"erpnext_oob.utils.new_apply_pricing_rule"
@@ -212,13 +213,7 @@ doc_events = {
 
 # before_tests = "erpnext_oob.install.before_tests"
 
-# Overriding Methods
-# ------------------------------
-#
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "erpnext_oob.event.get_events"
-# }
-#
+
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
