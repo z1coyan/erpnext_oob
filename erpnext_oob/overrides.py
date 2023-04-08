@@ -1,5 +1,6 @@
 import frappe
 from frappe.core.doctype.communication.communication import Communication
+from frappe.core.doctype.file.utils import extract_images_from_html
 
 class CustomCommunication(Communication):
     def get_content(self, print_format=None):
