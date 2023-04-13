@@ -311,7 +311,7 @@
   "value": "1"
  },
  {
-  "doc_type": "Qulity Inspection",
+  "doc_type": "Quality Inspection",
   "doctype": "Property Setter",
   "doctype_or_field": "DocField",
   "field_name": "inspection_type",
