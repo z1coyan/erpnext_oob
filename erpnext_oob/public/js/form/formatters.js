@@ -15,9 +15,9 @@ frappe.form.formatters.Datetime = function(value) {
 }
 
 // 这样的话所有表单的data类型都会调用翻译方法
-frappe.form.formatters.Data = function(value) {
-	return value==null ? "" : __(value);
-}
+//frappe.form.formatters.Data = function(value) {
+//	return value==null ? "" : __(value);
+//}
 
 frappe.form.formatters.MultiSelect = function(value) {
 	if (typeof value == "string") {
