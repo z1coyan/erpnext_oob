@@ -14,10 +14,16 @@ frappe.form.formatters.Datetime = function(value) {
 	}
 }
 
-// 这样的话所有表单的data类型都会调用翻译方法
-//frappe.form.formatters.Data = function(value) {
-//	return value==null ? "" : __(value);
-//}
+// data类型都会调用翻译方法,翻译报表中单据类型等字段
+frappe.form.formatters.Data = function(value, df) {
+	if (df && df.options == "URL") {
+		if (!value) return;
+		return `<a href="${value}" title="Open Link" target="_blank">${value}</a>`;
+	}
+	value = value == null ? "" : __(value);
+
+	return frappe.form.formatters._apply_custom_formatter(value, df);	
+}
 
 frappe.form.formatters.MultiSelect = function(value) {
 	if (typeof value == "string") {
