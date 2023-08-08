@@ -4,8 +4,10 @@ from erpnext_oob.localize.localize import import_coa
 
 
 def pinyin_name(doc, method):
-    if not doc.meta.has_field('pinyin_name'): return    
-    doc.pinyin_name = get_pinyin(doc.customer_name)
+    if not doc.meta.has_field('pinyin_name'): return
+    pinyin_name = get_pinyin(doc.customer_name)
+    if pinyin_name.strip():    
+        doc.pinyin_name = pinyin_name
 
 def contact_image_handling(doc, method):
     if method == "before_validate" and not doc.image:
