@@ -24,6 +24,7 @@ def execute():
 	frappe.db.commit()
 
 
+
 def create_content(doc):
 	content = []
 	if doc.charts:
@@ -72,7 +73,7 @@ def create_content(doc):
 
 
 def update_workspace(doc, seq, content):
-	if not doc.title and not doc.content and not doc.public:
+	if force or (not doc.title and not doc.content and not doc.public):
 		doc.sequence_id = seq + 1
 		doc.content = json.dumps(content)
 		doc.public = 0 if doc.for_user else 1
@@ -89,3 +90,13 @@ def update_workspace(doc, seq, content):
 		doc.pin_to_bottom = 0
 		doc.hide_custom = 0
 		doc.save(ignore_permissions=True)
+
+
+def update_workspace_content(workspace):
+	try:
+		doc = frappe.get_doc("Workspace", workspace)
+		doc.content = json.dumps( create_content(doc))
+		doc.save(ignore_permissions=True)
+		frappe.db.commit()
+	except:
+		pass
