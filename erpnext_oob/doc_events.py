@@ -21,10 +21,10 @@ def company_create_default_accounts(doc, method):
 				where company=%s and docstatus<2 limit 1""",
 			doc.name
 		)
-    if not coa_exist and doc.chart_of_accounts == '中国会计科目表' and not doc.is_new():
+    if not coa_exist and doc.chart_of_accounts in  ['中国会计科目表','中国小企业会计准则', '中国企业会计准则'] and not doc.is_new():
         doc.create_default_warehouses()
         frappe.local.flags.ignore_root_company_validation = True
         frappe.local.flags.ignore_chart_of_accounts = True      #bypass system to set default accounts
-        import_coa(doc.name)        
+        import_coa(doc.name, doc.chart_of_accounts)        
 
     

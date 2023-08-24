@@ -449,5 +449,15 @@
    "name": "Work Order Item-description_sourced_by_supplier",
    "property": "description",
    "value": "if not checked, it will be excluded from send to manufacture,manual transfer it to WIP warehouse without refer to work order instead"
-  }            
+  },
+  {
+   "doc_type": "Account",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "root_type",
+   "modified": "2023-08-22 19:42:47.535662",
+   "name": "Account-root_type_options",
+   "property": "options",
+   "value": "\nAsset\nLiability\nIncome\nExpense\nEquity\nCommon Accounts"
+  }
 ]

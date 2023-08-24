@@ -1,6 +1,8 @@
-tax_category,tax_type,tax_template
-0税率,Sales,0销项税
-13税率,Sales,13销项税
-1税率,Purchase,1进项税
-13税率,Purchase,13进项税
-0税率,Purchase,0进项税
+tax_category,tax_type,customer_group,item_group,billing_country,shipping_country,priority,tax_template
+0税率,Sales,,,,,1,0销项税
+13税率,Sales,,,,,1,13销项税
+1税率,Purchase,,,,,1,1进项税
+13税率,Purchase,,,,,1,13进项税
+0税率,Purchase,,,,,1,0进项税
+13税率,Sales,,,China,China,99,13销项税
+13税率,Purchase,,,China,China,99,13进项税

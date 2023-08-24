@@ -7,3 +7,4 @@ Asset Transfer,转移
 "for physical SFG to be  always produced in-house","针对当前物料是有物料清单的半成品场景，勾选表示生产本物料清单成品时，工单发这个半成品，半成品需另开工单生产入库，否则工单发半成品还是其下阶原材料取决于工单中是否勾选采用多级物料清单"
 "for subcontract case, ticked means this item excluded from the to-be sent to supplier raw material list",针对委外场景，勾选则委外发料(原材料)中不包括此物料
 "if not checked, it will be excluded from send to manufacture,manual transfer it to WIP warehouse without refer to work order instead",不勾选则工单发料时被剔除，需通过诸如物料移动-直接调拨发料至在制品仓以备入库扣帐
+Common Account,共同类

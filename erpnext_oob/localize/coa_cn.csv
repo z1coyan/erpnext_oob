@@ -31,6 +31,7 @@ account_name,parent_account,account_number,parent_account_number,is_group,accoun
 库存商品,资产,1405,1000,,Stock,Asset,CNY
 商品进销差价,资产,1407,1000,,Stock,Asset,CNY
 委托加工物资,资产,1408,1000,,Stock,Asset,CNY
+在产品,资产,1409,1000,,Stock,Asset,CNY
 周转材料,资产,1411,1000,1,Stock,Asset,CNY
 在库,周转材料,141101,1411,,Stock,Asset,CNY
 在用,周转材料,141102,1411,,Stock,Asset,CNY
@@ -194,6 +195,7 @@ account_name,parent_account,account_number,parent_account_number,is_group,accoun
 工本手续费,财务费用,560302,5603,,,Expense,CNY
 汇兑损失,财务费用,560303,5603,,,Expense,CNY
 现金折扣,财务费用,560304,5603,,,Expense,CNY
+圆整差异,财务费用,560305,5603,,,Expense,CNY
 营业外支出:损失支出、罚没滞纳金、捐赠赞助、其他,成本,5711,4000,1,,Expense,CNY
 存货的盘亏、毁损、报废损失,营业外支出:损失支出、罚没滞纳金、捐赠赞助、其他,571101,5711,,,Expense,CNY
 非流动资产处置净损失,营业外支出:损失支出、罚没滞纳金、捐赠赞助、其他,571102,5711,,,Expense,CNY
@@ -205,6 +207,5 @@ account_name,parent_account,account_number,parent_account_number,is_group,accoun
 被没收财物的损失,营业外支出:损失支出、罚没滞纳金、捐赠赞助、其他,571108,5711,,,Expense,CNY
 捐赠支出,营业外支出:损失支出、罚没滞纳金、捐赠赞助、其他,571109,5711,,,Expense,CNY
 赞助支出,营业外支出:损失支出、罚没滞纳金、捐赠赞助、其他,571110,5711,,,Expense,CNY
-圆整抹零,营业外支出:损失支出、罚没滞纳金、捐赠赞助、其他,571111,5711,,,Expense,CNY
 所得税费用,成本,5801,4000,,,Expense,CNY
 临时开账科目,所有者权益,9999,3000,,Temporary,Equity,CNY
