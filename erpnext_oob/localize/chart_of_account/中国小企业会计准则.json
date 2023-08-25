@@ -581,13 +581,6 @@
                     "account_number": "2221026",
                     "account_type": "",
                     "tax_rate": 1
-                },
-                "VAT": {
-                    "is_group": "",
-                    "root_type": "Liability",
-                    "account_number": "2221026",
-                    "account_type": "Tax",
-                    "tax_rate": 17
                 }
             },
             "应付利息": {
@@ -751,18 +744,60 @@
             "account_type": "",
             "tax_rate": "",
             "生产成本": {
-                "is_group": "",
+                "is_group": "1",
                 "root_type": "",
                 "account_number": 4001,
                 "account_type": "Cost of Goods Sold",
-                "tax_rate": ""
+                "tax_rate": "",
+                "基本生产成本": {
+                    "is_group": "",
+                    "root_type": "",
+                    "account_number": 400101,
+                    "account_type": "Cost of Goods Sold"
+                },
+                "辅助生产成本": {
+                    "is_group": "",
+                    "root_type": "",
+                    "account_number": 400102,
+                    "account_type": "Cost of Goods Sold"
+                },
+                "库存调整": {
+                    "is_group": "",
+                    "root_type": "",
+                    "account_number": 400103,
+                    "account_type": "Stock Adjustment"
+                }
             },
-            "制造费用": {
+            "劳务成本": {
                 "is_group": "",
                 "root_type": "",
-                "account_number": 4101,
+                "account_number": 4002,
+                "account_type": "Cost of Goods Sold"
+            },                
+            "制造费用": {
+                "is_group": "1",
+                "root_type": "",
+                "account_number": 5101,
                 "account_type": "Cost of Goods Sold",
-                "tax_rate": ""
+                "tax_rate": "",
+                "基本制造费用": {
+                    "is_group": "",
+                    "root_type": "",
+                    "account_number": 510101,
+                    "account_type": "Cost of Goods Sold"
+                },
+                "结转库存的费用": {
+                    "is_group": "",
+                    "root_type": "",
+                    "account_number": 510102,
+                    "account_type": "Expenses Included In Valuation"
+                },
+                "结转资产的费用": {
+                    "is_group": "",
+                    "root_type": "",
+                    "account_number": 510103,
+                    "account_type": "Expenses Included In Asset Valuation"
+                }
             },
             "研发支出": {
                 "is_group": "",

@@ -926,10 +926,16 @@
                     "account_number": 500101,
                     "account_type": "Cost of Goods Sold"
                 },
-                "库存调整": {
+                "辅助生产成本": {
                     "is_group": "",
                     "root_type": "",
                     "account_number": 500102,
+                    "account_type": "Cost of Goods Sold"
+                },
+                "库存调整": {
+                    "is_group": "",
+                    "root_type": "",
+                    "account_number": 500103,
                     "account_type": "Stock Adjustment"
                 }                
             },

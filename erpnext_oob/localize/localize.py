@@ -146,24 +146,28 @@ def set_warehouse_account(company):
 
 def set_item_group_account(company):
 	try:
-		abbr = frappe.db.get_value('Company', company, 'abbr')
-		if frappe.db.exists("Account", f'400101 - 基本生产成本 - {abbr}'):
-			for wh_detail in [
-					[_("Raw Material"), '400101 - 基本生产成本'],
-					[_("Sub Assemblies"), '400101 - 基本生产成本'],
-					[_("Consumable"), '400101 - 基本生产成本'],
-					[_("Services"), '400102 - 辅助生产成本'],
-					["产品展示", '5401 - 主营业务成本']
-				]:
-				warehouse_name = f'{wh_detail[0]} - {abbr}'		
-				account_name = 	f'{wh_detail[1]} - {abbr}'
-				if frappe.db.exists("Item Group", wh_detail[0]):
-					item_group_obj = frappe.get_doc('Item Group', wh_detail[0])
-					item_group_obj.append('item_group_defaults',{
-						'company': company,
-						'expense_account': account_name
-					})
-					item_group_obj.save()
+		item_group_account_list =  [
+					[_("Raw Material"), '基本生产成本'],
+					[_("Sub Assemblies"), '基本生产成本'],
+					[_("Consumable"), '基本生产成本'],
+					[_("Services"), '辅助生产成本'],
+					["产品展示", '主营业务成本']
+		]
+		
+		account_map = frappe._dict(frappe.get_all('Account',
+			filters ={'account_name': ('in', [row[1] for row in item_group_account_list]),
+			         'company': company},
+			fields = ['account_name', 'name'],
+			as_list = True))
+		for (item_group, account_name) in item_group_account_list:
+			account_id = account_map.get(account_name)
+			if account_id and frappe.db.exists('Item Group', item_group):				
+				item_group_doc = frappe.get_doc('Item Group', item_group)				
+				item_group_doc.append('item_group_defaults',{
+					'company': company,
+					'expense_account': account_id
+				})
+				item_group_doc.save()
 	except:
 		pass
 

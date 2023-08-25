@@ -4,5 +4,5 @@ tax_category,tax_type,customer_group,item_group,billing_country,shipping_country
 1税率,Purchase,,,,,1,1进项税
 13税率,Purchase,,,,,1,13进项税
 0税率,Purchase,,,,,1,0进项税
-13税率,Sales,,,China,China,99,13销项税
-13税率,Purchase,,,China,China,99,13进项税
+,Sales,,,China,China,99,13销项税
+,Purchase,,,China,China,99,13进项税
