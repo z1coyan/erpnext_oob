@@ -61,7 +61,7 @@
                 "is_group": "",
                 "root_type": "",
                 "account_number": 1121,
-                "account_type": "",
+                "account_type": "Receivable",
                 "tax_rate": ""
             },
             "应收账款": {
@@ -277,7 +277,7 @@
                 "is_group": "",
                 "root_type": "",
                 "account_number": 2201,
-                "account_type": "",
+                "account_type": "Payable",
                 "tax_rate": ""
             },
             "应付账款": {
@@ -341,7 +341,7 @@
                         "root_type": "",
                         "account_number": "  222100101",
                         "account_type": "",
-                        "tax_rate": ""
+                        "tax_rate": "Tax"
                     },
                     "已交税金": {
                         "is_group": "",

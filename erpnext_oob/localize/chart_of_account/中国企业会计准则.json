@@ -65,7 +65,7 @@
                 "is_group": "",
                 "root_type": "",
                 "account_number": 1121,
-                "account_type": ""
+                "account_type": "Receivable"
             },
             "应收账款": {
                 "is_group": "",
@@ -113,7 +113,7 @@
                 "is_group": "",
                 "root_type": "",
                 "account_number": 1221,
-                "account_type": ""
+                "account_type": "Receivable"
             },
             "坏账准备": {
                 "is_group": "",
@@ -491,7 +491,7 @@
                 "is_group": "",
                 "root_type": "",
                 "account_number": 2201,
-                "account_type": ""
+                "account_type": "Payable"
             },
             "应付账款": {
                 "is_group": 1,
@@ -544,43 +544,43 @@
                     "is_group": "",
                     "root_type": "",
                     "account_number": 2221001,
-                    "account_type": ""
+                    "account_type": "Tax"
                 },
                 "未交增值税": {
                     "is_group": "",
                     "root_type": "",
                     "account_number": 2221002,
-                    "account_type": ""
+                    "account_type": "Tax"
                 },
                 "应交消费税": {
                     "is_group": "",
                     "root_type": "",
                     "account_number": 2221003,
-                    "account_type": ""
+                    "account_type": "Tax"
                 },
                 "应交营业税": {
                     "is_group": "",
                     "root_type": "",
                     "account_number": 2221004,
-                    "account_type": ""
+                    "account_type": "Tax"
                 },
                 "应交资源税": {
                     "is_group": "",
                     "root_type": "",
                     "account_number": 2221005,
-                    "account_type": ""
+                    "account_type": "Tax"
                 },
                 "应交所得税": {
                     "is_group": "",
                     "root_type": "",
                     "account_number": 2221006,
-                    "account_type": ""
+                    "account_type": "Tax"
                 },
                 "应交土地增值税": {
                     "is_group": "",
                     "root_type": "",
                     "account_number": 2221007,
-                    "account_type": ""
+                    "account_type": "Tax"
                 },
                 "应交城市维护建设税": {
                     "is_group": "",
@@ -694,7 +694,7 @@
                     "is_group": "",
                     "root_type": "",
                     "account_number": 2221026,
-                    "account_type": ""
+                    "account_type": "Tax"
                 }
             },
             "应付利息": {
