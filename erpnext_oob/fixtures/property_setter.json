@@ -459,5 +459,15 @@
    "name": "Account-root_type_options",
    "property": "options",
    "value": "\nAsset\nLiability\nIncome\nExpense\nEquity\nCommon Accounts"
+  },
+  {
+   "doc_type": "Role Profile",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "role_profile",
+   "modified": "2023-09-10 19:42:46.943779",
+   "name": "Role Profile-role_profile-label",
+   "property": "label",
+   "value": "Role Profile"
   }
 ]
