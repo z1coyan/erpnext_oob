@@ -956,7 +956,7 @@
                     "is_group": "",
                     "root_type": "",
                     "account_number": "5601007",
-                    "account_type": "Expense Account",
+                    "account_type": "Depreciation",
                     "tax_rate": ""
                 },
                 "摊销费": {
@@ -1075,7 +1075,7 @@
                     "is_group": "",
                     "root_type": "",
                     "account_number": "5602007",
-                    "account_type": "Expense Account",
+                    "account_type": "Depreciation",
                     "tax_rate": ""
                 },
                 "管理费用-摊销费": {

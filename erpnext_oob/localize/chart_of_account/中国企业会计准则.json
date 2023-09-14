@@ -1260,7 +1260,7 @@
                     "is_group": "",
                     "root_type": "",
                     "account_number": 6601007,
-                    "account_type": "Expense Account"
+                    "account_type": "Depreciation"
                 },
                 "摊销费": {
                     "is_group": "",
@@ -1362,7 +1362,7 @@
                     "is_group": "",
                     "root_type": "",
                     "account_number": 6602007,
-                    "account_type": "Expense Account"
+                    "account_type": "Depreciation"
                 },
                 "摊销费": {
                     "is_group": "",
