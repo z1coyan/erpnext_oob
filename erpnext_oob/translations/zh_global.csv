@@ -1135,3 +1135,5 @@ Select Link,读(链接字段)
 Selected Serial Numbers,已选序列号
 Debit in Account Currency,借方(科目币别)
 Credit in Account Currency,贷方(科目币别)
+No {0} found with matching filters. Clear filters to see all {0}.,"未找到匹配当前筛选条件的{0},请清除筛选条件后查看全部{0}"
+Custom Translation,定制翻译
