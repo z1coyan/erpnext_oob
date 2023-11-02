@@ -73,7 +73,7 @@ def create_content(doc):
 
 
 def update_workspace(doc, seq, content):
-	if (not doc.title and not doc.content and not doc.public):
+	if (not doc.title and (not doc.content or doc.content == '[]') and not doc.public):
 		doc.sequence_id = seq + 1
 		doc.content = json.dumps(content)
 		doc.public = 0 if doc.for_user else 1
