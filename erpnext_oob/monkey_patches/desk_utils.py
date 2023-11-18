@@ -7,10 +7,10 @@ def provide_binary_file(filename: str, extension: str, content: bytes) -> None:
         fisher  solve the chinese filename not supported by gunicorn: latin encoding error
     """
 	from frappe import _
-	from urllib.parse import quote
+	from urllib.parse import quote, unquote
 
 	filename = f"{_(filename)}.{extension}"
-	filename = f'{quote(filename)}'
+	filename = f'{quote(unquote(filename))}'
 
 	frappe.response["type"] = "binary"
 	frappe.response["filecontent"] = content
