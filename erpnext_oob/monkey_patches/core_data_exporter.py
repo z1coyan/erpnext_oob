@@ -12,8 +12,8 @@ def build_response(self):
     from urllib.parse import quote
 
     filename = _(self.doctype)
-    filename = f'{quote(filename)}'
     if self.file_type == "CSV":
+        filename = f'{quote(filename)}'
         build_csv_response(self.get_csv_array_for_export(), filename)
     elif self.file_type == "Excel":
         build_xlsx_response(self.get_csv_array_for_export(), filename)

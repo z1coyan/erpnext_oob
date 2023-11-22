@@ -54,6 +54,10 @@ def _validate_selects(self):
             frappe.throw(_('{0} {1} cannot be "{2}". It should be one of "{3}"').format(prefix, label,
                 value, comma_options))
 
+def money_in_words(self, amount):
+    return frappe.utils.money_in_words(amount)
+
 BaseDocument.get_owner_username = get_owner_username
 BaseDocument.get_submit_username = get_submit_username
 BaseDocument._validate_selects = _validate_selects
+BaseDocument.money_in_words = money_in_words
