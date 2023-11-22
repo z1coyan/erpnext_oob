@@ -8,6 +8,7 @@ import frappe
 
 uom_list = [
     '个',
+    '只',
     '支',
     '件',
     '台',
