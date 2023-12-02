@@ -1,3 +1,6 @@
+
+import 'default-passive-events'
+
 $(document).on('app_ready', function() {
 	if (document.referrer.endsWith("/login")) {
 		// app ready after login, let's rumble
