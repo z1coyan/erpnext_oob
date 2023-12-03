@@ -1,3 +1,21 @@
+jQuery.event.special.touchstart = {
+	setup: function( _, ns, handle ){
+	  this.addEventListener("touchstart", handle, { passive: true });	  
+	}
+};
+
+jQuery.event.special.touchend = {
+	setup: function( _, ns, handle ){
+		this.addEventListener("touchend", handle, { passive: true });
+	}
+};
+
+jQuery.event.special.touchmove = {
+	setup: function( _, ns, handle ){	  
+	  this.addEventListener("touchmove", handle, { passive: true });
+	}
+};
+
 $(document).on('app_ready', function() {
 	if (document.referrer.endsWith("/login")) {
 		// app ready after login, let's rumble
