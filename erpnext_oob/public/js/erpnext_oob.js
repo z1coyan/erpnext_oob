@@ -1,5 +1,5 @@
 
-import 'default-passive-events'
+//import 'default-passive-events'
 
 $(document).on('app_ready', function() {
 	if (document.referrer.endsWith("/login")) {
