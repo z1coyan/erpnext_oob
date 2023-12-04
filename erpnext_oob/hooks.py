@@ -238,3 +238,6 @@ doc_events = {
 # 	"erpnext_oob.auth.validate"
 # ]
 
+naming_series_variables = {
+    "MM_posting_date": "erpnext_oob.api.get_posting_date_month"
+}
