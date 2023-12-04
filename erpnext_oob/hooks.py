@@ -187,54 +187,6 @@ doc_events = {
 	}
 }
 
-# Scheduled Tasks
-# ---------------
-
-# scheduler_events = {
-# 	"all": [
-# 		"erpnext_oob.tasks.all"
-# 	],
-# 	"daily": [
-# 		"erpnext_oob.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"erpnext_oob.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"erpnext_oob.tasks.weekly"
-# 	]
-# 	"monthly": [
-# 		"erpnext_oob.tasks.monthly"
-# 	]
-# }
-
-# Testing
-# -------
-
-# before_tests = "erpnext_oob.install.before_tests"
-
-
-# each overriding function accepts a `data` argument;
-# generated from the base implementation of the doctype dashboard,
-# along with any modifications made in other Frappe apps
-# override_doctype_dashboards = {
-# 	"Task": "erpnext_oob.task.get_dashboard_data"
-# }
-
-# exempt linked doctypes from being automatically cancelled
-#
-# auto_cancel_exempted_doctypes = ["Auto Repeat"]
-
-
-# User Data Protection
-# --------------------
-
-
-
-# Authentication and authorization
-# --------------------------------
-
-# auth_hooks = [
-# 	"erpnext_oob.auth.validate"
-# ]
-
+naming_series_variables = {
+    "MM_posting_date": "erpnext_oob.api.get_posting_date_month"
+}
