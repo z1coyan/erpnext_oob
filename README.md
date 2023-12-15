@@ -92,6 +92,14 @@ ERPNext开箱即用，主要包括以下功能
 4.3 增加了自动从网站https://www.boc.cn/sourcedb/whpj/下载并更新货币汇率的函数sync_exchange_rate, 可新增这一行代码
 frappe.call('erpnext_oob.localize.sync_exchange_rate.sync_exchange_rate')
 的python 后台任务类型脚本设置自动更新，详见码云问题贴 https://gitee.com/yuzelin/erpnext-chinese-docs/issues/I4WFIJ
+
+4.4 定制表单-自动编号格式支持基于单据过账日期字段posting_date的格式化字符串
+4.4.1.定制表单-编号规则，选公式，format字符串使用如下格式化字符串（首字母分别代表截取日，月，年两位，最后首字母Y 取4位年），
+例如单据过帐日期为2023-09-18，分别截取出来的编号为
+d_posting_date = > 18
+m_posting_date = > 09
+y_posting_date = > 23
+Y_posting_date = > 2023
  
 本人在discuss.erpnext.com及github.com官网帐号是szufisher
 
