@@ -1,6 +1,6 @@
 import frappe
 from frappe.utils import cint
-from frappe.permissions import rights
+from frappe.permissions import rights, allow_everything
 from frappe import permissions
 
 def custom_get_role_permissions(doctype_meta, user=None, is_owner=None):
