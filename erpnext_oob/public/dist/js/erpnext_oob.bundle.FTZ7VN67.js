@@ -1867,7 +1867,8 @@
           this.columns = [];
           this.rows = [];
           this.prepareColumns();
-          this.prepareRows();
+          this.validateData(this.data);
+          this.rows = this.prepareRows(this.data);
           this.prepareTreeRows();
           this.prepareRowView();
           this.prepareNumericColumns();
@@ -1961,9 +1962,8 @@
             return column;
           });
         }
-        prepareRows() {
-          this.validateData(this.data);
-          this.rows = this.data.map((d, i) => {
+        prepareRows(data) {
+          return data.map((d, i) => {
             const index = this._getNextRowCount();
             let row = [];
             let meta = {
@@ -2035,7 +2035,9 @@
         }
         appendRows(rows) {
           this.validateData(rows);
-          this.rows.push(...this.prepareRows(rows));
+          this.rows = this.rows.concat(this.prepareRows(rows));
+          this.prepareTreeRows();
+          this.prepareRowView();
         }
         sortRows(colIndex, sortOrder = "none") {
           colIndex = +colIndex;
@@ -4575,7 +4577,7 @@
         const getFormattedValue = (cell) => {
           let formatter = CellManager.getCustomCellFormatter(cell);
           if (formatter && cell.content) {
-            cell.html = formatter(cell.content, rows[cell.rowIndex], cell.column, rows[cell.rowIndex], true);
+            cell.html = formatter(cell.content, rows[cell.rowIndex], cell.column, rows[cell.rowIndex], filter);
             return stripHTML(cell.html);
           }
           return cell.content || "";
@@ -5420,6 +5422,15 @@
               reqd: 1,
               get_options: (df) => {
                 return df.doc.link_type;
+              },
+              get_query: function(df) {
+                if (df.link_type == "DocType") {
+                  return {
+                    filters: {
+                      istable: 0
+                    }
+                  };
+                }
               }
             },
             {
@@ -5569,7 +5580,6 @@
           fieldtype: "Data",
           fieldname: "url",
           label: "URL",
-          options: "URL",
           default: "",
           depends_on: (s) => s.type == "URL",
           mandatory_depends_on: (s) => s.type == "URL"
@@ -5690,7 +5700,11 @@
       }
       data.label = data.label ? data.label : frappe.model.unscrub(data.link_to);
       if (data.url) {
-        !validate_url(data.url) && frappe.throw({
+        let _url = data.url;
+        if (data.url.startsWith("/")) {
+          _url = frappe.urllib.get_base_url() + data.url;
+        }
+        !validate_url(_url) && frappe.throw({
           message: __("<b>{0}</b> is not a valid URL", [data.url]),
           title: __("Invalid URL"),
           indicator: "red"
@@ -8496,4 +8510,4 @@
   };
 })();
 /*! Sortable 1.15.0 - MIT | git://github.com/SortableJS/Sortable.git */
-//# sourceMappingURL=erpnext_oob.bundle.5SKUMHBK.js.map
+//# sourceMappingURL=erpnext_oob.bundle.FTZ7VN67.js.map
