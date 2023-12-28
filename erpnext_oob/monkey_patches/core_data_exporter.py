@@ -18,4 +18,4 @@ def build_response(self):
     elif self.file_type == "Excel":
         build_xlsx_response(self.get_csv_array_for_export(), filename)
 
-Exporter.build_response = build_response
+Exporter.build_response = build_response   #转到csvutils里去处理
