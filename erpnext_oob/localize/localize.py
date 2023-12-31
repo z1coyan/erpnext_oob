@@ -100,6 +100,21 @@ def setup_tax_template(company_name):
 		tax_data = json.load(json_file)
 	from_detailed_data(company_name, tax_data)
 
+	try:
+		#标准功能中未处理含税字段，这里单独处理
+		for prefix in ('Purchase', 'Sales'):	
+			header = frappe.qb.DocType(f"{prefix} Taxes and Charges Template")
+			detail = frappe.qb.DocType(f"{prefix} Taxes and Charges")
+
+			frappe.qb.update(detail
+				).join(header
+				).on(header.name == detail.parent
+				).where(header.title.like('%含税%')
+				).set(detail.included_in_print_rate, 1
+				).run()			
+	except:
+		pass
+
 def setup_tax_rule(company_name):
 	try:
 		abbr = frappe.db.get_value('Company', company_name, 'abbr')
@@ -121,7 +136,7 @@ def setup_tax_rule(company_name):
 					'priority': priority,
 					template_field_name: f'{tax_template} - {abbr}',
 					'company': company_name})
-			tax_rule.insert(ignore_permissions = 1)
+			tax_rule.insert(ignore_permissions = 1)	
 	except:
 		pass
 

@@ -20,7 +20,7 @@
                             "account_head": {
                                 "account_name":"应交增值税-销项税额",
                                 "account_number":"222100105",
-                                "included_in_paid_amount": 1,
+                                "included_in_print_rate": 1,
                                 "tax_rate": 13
                             }
                         }
@@ -35,7 +35,7 @@
                             "account_head": {
                                 "account_name":"应交增值税-销项税额",
                                 "account_number":"222100105",
-                                "included_in_paid_amount": 1,
+                                "included_in_print_rate": 1,
                                 "tax_rate": 3
                             }
                         }
@@ -50,7 +50,7 @@
                             "account_head": {
                                 "account_name":"应交增值税-销项税额",
                                 "account_number":"222100105",
-                                "included_in_paid_amount": 0,
+                                "included_in_print_rate": 0,
                                 "tax_rate": 13
                             }
                         }
@@ -65,7 +65,7 @@
                             "account_head": {
                                 "account_name":"应交增值税-销项税额",
                                 "account_number":"222100105",
-                                "included_in_paid_amount": 0,
+                                "included_in_print_rate": 0,
                                 "tax_rate": 3
                             }
                         }
@@ -80,7 +80,7 @@
                             "account_head": {
                                 "account_name":"应交增值税-销项税额",
                                 "account_number":"222100105",
-                                "included_in_paid_amount": 0,
+                                "included_in_print_rate": 0,
                                 "tax_rate": 0
                             }
                         }
@@ -97,7 +97,7 @@
                             "account_head": {
                                 "account_name":"应交增值税-进项税额",
                                 "account_number":"22210101",
-                                "included_in_paid_amount": 1,
+                                "included_in_print_rate": 1,
                                 "tax_rate": 1
                             }
                         }
@@ -112,7 +112,7 @@
                             "account_head": {
                                 "account_name":"应交增值税-进项税额",
                                 "account_number":"22210101",
-                                "included_in_paid_amount": 1,
+                                "included_in_print_rate": 1,
                                 "tax_rate": 3
                             }
                         }
@@ -127,7 +127,7 @@
                             "account_head": {
                                 "account_name":"应交增值税-进项税额",
                                 "account_number":"22210101",
-                                "included_in_paid_amount": 1,
+                                "included_in_print_rate": 1,
                                 "tax_rate": 13
                             }
                         }
@@ -142,7 +142,7 @@
                             "account_head": {
                                 "account_name":"应交增值税-进项税额",
                                 "account_number":"22210101",
-                                "included_in_paid_amount": 0,
+                                "included_in_print_rate": 0,
                                 "tax_rate": 13
                             }
                         }
@@ -157,7 +157,7 @@
                             "account_head": {
                                 "account_name":"应交增值税-进项税额",
                                 "account_number":"22210101",
-                                "included_in_paid_amount": 0,
+                                "included_in_print_rate": 0,
                                 "tax_rate": 0
                             }
                         }
