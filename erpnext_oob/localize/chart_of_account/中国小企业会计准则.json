@@ -1146,24 +1146,31 @@
                     "account_type": "Expense Account",
                     "tax_rate": ""
                 },
-                "财务费用-汇兑损益": {
+                "财务费用-未实现汇兑损益": {
                     "is_group": "",
                     "root_type": "",
                     "account_number": "5603003",
                     "account_type": "Expense Account",
                     "tax_rate": ""
-                },
-                "财务费用-现金折扣": {
+                },                
+                "财务费用-汇兑损益": {
                     "is_group": "",
                     "root_type": "",
                     "account_number": "5603004",
                     "account_type": "Expense Account",
                     "tax_rate": ""
                 },
+                "财务费用-现金折扣": {
+                    "is_group": "",
+                    "root_type": "",
+                    "account_number": "5603005",
+                    "account_type": "Expense Account",
+                    "tax_rate": ""
+                },
                 "财务费用-圆整差异": {
                     "is_group": "",
                     "root_type": "",
-                    "account_number": 5603005,
+                    "account_number": 5603006,
                     "account_type": "Expense Account"
                 }
             },

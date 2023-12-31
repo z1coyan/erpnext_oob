@@ -469,5 +469,25 @@
    "name": "Role Profile-role_profile-label",
    "property": "label",
    "value": "Role Profile"
+  },
+  {
+   "doc_type": "Customer",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "customer_name",
+   "modified": "2023-12-31 19:42:46.943779",
+   "name": "Customer-customer_name-no_copy",
+   "property": "no_copy",
+   "value": 0
+  },
+  {
+   "doc_type": "Supplier",
+   "doctype": "Property Setter",
+   "doctype_or_field": "DocField",
+   "field_name": "supplier_name",
+   "modified": "2023-12-31 19:42:46.943779",
+   "name": "Customer-supplier_name-no_copy",
+   "property": "no_copy",
+   "value": 0
   }
 ]

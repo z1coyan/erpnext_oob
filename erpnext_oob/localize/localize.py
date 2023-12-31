@@ -149,7 +149,7 @@ def set_item_group_account(company):
 					[_("Sub Assemblies"), '生产成本-基本'],
 					[_("Consumable"), '生产成本-基本'],
 					[_("Services"), '生产成本-辅助'],
-					["产品展示", '主营业务成本']
+					[_("Product"), '主营业务成本']
 		]
 		
 		account_map = frappe._dict(frappe.get_all('Account',

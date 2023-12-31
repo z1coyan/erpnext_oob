@@ -5,7 +5,7 @@
         "资产类": {
             "is_group": 1,
             "root_type": "Asset",
-            "account_number": "",
+            "account_number": "1000",
             "account_type": "",
             "库存现金": {
                 "is_group": "",
@@ -443,7 +443,7 @@
         "负债类": {
             "is_group": 1,
             "root_type": "Liability",
-            "account_number": "",
+            "account_number": "2000",
             "account_type": "",
             "短期借款": {
                 "is_group": "",
@@ -839,7 +839,7 @@
         "权益类": {
             "is_group": 1,
             "root_type": "Equity",
-            "account_number": "",
+            "account_number": "3000",
             "account_type": "",
             "实收资本": {
                 "is_group": "",
@@ -911,91 +911,89 @@
         "成本类": {
             "is_group": 1,
             "root_type": "Expense",
-            "account_number": "",
+            "account_number": "4000",
             "account_type": "",
             "tax_rate": "",
             "生产成本": {
                 "is_group": "1",
                 "root_type": "",
-                "account_number": 5001,
+                "account_number": 4001,
                 "account_type": "Cost of Goods Sold",
                 "tax_rate": "",
-                "基本生产成本": {
+                "生产成本-基本": {
                     "is_group": "",
                     "root_type": "",
-                    "account_number": 500101,
+                    "account_number": 400101,
                     "account_type": "Cost of Goods Sold"
                 },
-                "辅助生产成本": {
+                "生产成本-辅助": {
                     "is_group": "",
                     "root_type": "",
-                    "account_number": 500102,
+                    "account_number": 400102,
                     "account_type": "Cost of Goods Sold"
                 },
                 "库存调整": {
                     "is_group": "",
                     "root_type": "",
-                    "account_number": 500103,
+                    "account_number": 400103,
                     "account_type": "Stock Adjustment"
-                }                
-            },
-            "制造费用": {
-                "is_group": "1",
-                "root_type": "",
-                "account_number": 5101,
-                "account_type": "Cost of Goods Sold",
-                "tax_rate": "",
-                "基本制造费用": {
+                },
+                "生产成本-结转": {
                     "is_group": "",
                     "root_type": "",
-                    "account_number": 510101,
+                    "account_number": 400199,
                     "account_type": "Cost of Goods Sold"
-                },
-                "结转库存的费用": {
-                    "is_group": "",
-                    "root_type": "",
-                    "account_number": 510102,
-                    "account_type": "Expenses Included In Valuation"
-                },
-                "结转资产的费用": {
-                    "is_group": "",
-                    "root_type": "",
-                    "account_number": 510103,
-                    "account_type": "Expenses Included In Asset Valuation"
                 }
             },
             "劳务成本": {
                 "is_group": "",
                 "root_type": "",
-                "account_number": 5201,
+                "account_number": 4002,
+                "account_type": "Cost of Goods Sold"
+            },                
+            "制造费用": {
+                "is_group": "1",
+                "root_type": "",
+                "account_number": 4101,
                 "account_type": "Cost of Goods Sold",
-                "tax_rate": ""
+                "tax_rate": "",
+                "制造费用-基本": {
+                    "is_group": "",
+                    "root_type": "",
+                    "account_number": 410101,
+                    "account_type": "Cost of Goods Sold"
+                },
+                "制造费用-结转资产": {
+                    "is_group": "",
+                    "root_type": "",
+                    "account_number": 410103,
+                    "account_type": "Expenses Included In Asset Valuation"
+                },
+                "制造费用-结转库存": {
+                    "is_group": "",
+                    "root_type": "",
+                    "account_number": 410199,
+                    "account_type": "Expenses Included In Valuation"
+                }                
             },
             "研发支出": {
                 "is_group": "",
                 "root_type": "",
-                "account_number": 5301,
+                "account_number": 4301,
                 "account_type": "Cost of Goods Sold",
                 "tax_rate": ""
             },
             "工程施工": {
                 "is_group": "",
                 "root_type": "",
-                "account_number": 5401,
-                "account_type": "Cost of Goods Sold",
-                "tax_rate": ""
-            },
-            "工程结算": {
-                "is_group": "",
-                "root_type": "",
-                "account_number": 5402,
+                "account_number": 4401,
                 "account_type": "Cost of Goods Sold",
                 "tax_rate": ""
             },
             "机械作业": {
                 "is_group": "",
                 "root_type": "",
-                "account_number": 5403,
+                "account_number": 4403,
                 "account_type": "Cost of Goods Sold",
                 "tax_rate": ""
             }
@@ -1038,8 +1036,8 @@
         },
         "损益类": {
             "is_group": 1,
-            "root_type": "Expense",
-            "account_number": "",
+            "root_type": "Income",
+            "account_number": "6000",
             "account_type": "",
             "主营业务收入": {
                 "is_group": "",

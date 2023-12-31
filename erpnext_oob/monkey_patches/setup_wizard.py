@@ -6,6 +6,8 @@ import erpnext
 @frappe.whitelist()
 def get_coa(doctype, parent, is_root = False, chart=None):
     from erpnext.accounts.doctype.account.chart_of_accounts.chart_of_accounts import build_tree_from_json
+    from erpnext_oob.localize.localize import get_chart
+
     # add chart to flags to retrieve when called from expand all function
     chart = chart if chart else frappe.flags.chart
     frappe.flags.chart = chart
@@ -13,6 +15,9 @@ def get_coa(doctype, parent, is_root = False, chart=None):
     if chart == '中国会计科目表':
         forest = get_chart_data_from_csv()
         accounts = build_tree_from_json('dummy',chart_data=forest)
+    elif chart in ['中国小企业会计准则', '中国企业会计准则']:
+        forest = get_chart(chart)
+        accounts = build_tree_from_json('dummy',chart_data=forest)    
     else:    
         accounts = build_tree_from_json(chart) # returns alist of dict in a tree render-able form
 
