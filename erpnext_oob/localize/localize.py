@@ -129,17 +129,15 @@ def setup_tax_rule(company_name):
 def get_charts_for_country(country, with_standard=False):
 	charts = old_get_charts_for_country(country, with_standard)
 	if country == 'China':
-		charts.insert(0,'中国会计科目表')
-		charts.extend(['中国小企业会计准则', '中国企业会计准则'])
+		charts.insert(0,'中国小企业会计准则')
+		charts.extend(['中国企业会计准则'])
 	return charts	
 
 def set_warehouse_account(company):
 	abbr = frappe.db.get_value('Company', company, 'abbr')
 	for wh_detail in [
-		[_("Stores"), '1403 - 原材料'],
-		[_("Work In Progress"), '1409 - 在产品'],
 		[_("Finished Goods"), '1405 - 库存商品' ],
-		[_("Goods In Transit"), '1402 - 在途物资']]:
+		[_("Goods In Transit"), '1411 - 周转材料']]:
 		warehouse_name = f'{wh_detail[0]} - {abbr}'		
 		account_name = 	f'{wh_detail[1]} - {abbr}'	
 		frappe.db.set_value('Warehouse', warehouse_name, 'account', account_name)
@@ -147,10 +145,10 @@ def set_warehouse_account(company):
 def set_item_group_account(company):
 	try:
 		item_group_account_list =  [
-					[_("Raw Material"), '基本生产成本'],
-					[_("Sub Assemblies"), '基本生产成本'],
-					[_("Consumable"), '基本生产成本'],
-					[_("Services"), '辅助生产成本'],
+					[_("Raw Material"), '生产成本-基本'],
+					[_("Sub Assemblies"), '生产成本-基本'],
+					[_("Consumable"), '生产成本-基本'],
+					[_("Services"), '生产成本-辅助'],
 					["产品展示", '主营业务成本']
 		]
 		

@@ -75,7 +75,7 @@
                 "is_group": "",
                 "root_type": "",
                 "account_number": 1123,
-                "account_type": "",
+                "account_type": "Payable",
                 "tax_rate": ""
             },
             "应收股利": {
@@ -320,7 +320,7 @@
                 "is_group": "",
                 "root_type": "",
                 "account_number": 2203,
-                "account_type": "",
+                "account_type": "Receivable",
                 "tax_rate": ""
             },
             "应付职工薪酬": {
