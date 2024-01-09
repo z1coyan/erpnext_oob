@@ -160,10 +160,10 @@ def set_warehouse_account(company):
 def set_item_group_account(company):
 	try:
 		item_group_account_list =  [
-					[_("Raw Material"), '生产成本-基本'],
-					[_("Sub Assemblies"), '生产成本-基本'],
-					[_("Consumable"), '生产成本-基本'],
-					[_("Services"), '生产成本-辅助'],
+					[_("Raw Material"), '生产成本-基本生产成本'],
+					[_("Sub Assemblies"), '生产成本-基本生产成本'],
+					[_("Consumable"), '生产成本-基本生产成本'],
+					[_("Services"), '生产成本-辅助生产成本'],
 					[_("Product"), '主营业务成本']
 		]
 		
