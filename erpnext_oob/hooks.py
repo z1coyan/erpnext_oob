@@ -17,6 +17,7 @@ page_js = {
     "print": "public/js/hooks/page/print.js"
 }
 doctype_js = {
+    "Company":"public/js/company.js"
 }
 
 setup_wizard_requires = "assets/erpnext_oob/js/setup_wizard.js"

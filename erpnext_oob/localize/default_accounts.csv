@@ -18,7 +18,7 @@ service_received_but_not_billed,应付账款-暂估服务
 expenses_included_in_valuation,制造费用-结转库存
 accumulated_depreciation_account,累计折旧
 depreciation_expense_account,管理费用-折旧费
-disposal_account,营业外收入-非流动资产处置净收益
+disposal_account,固定资产清理
 asset_received_but_not_billed,应付账款-暂估资产
 capital_work_in_progress_account,在建工程
 expenses_included_in_asset_valuation,制造费用-结转资产
