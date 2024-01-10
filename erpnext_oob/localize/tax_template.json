@@ -18,8 +18,8 @@
                     "taxes": [
                         {
                             "account_head": {
-                                "account_name":"应交增值税-销项税额",
-                                "account_number":"222100105",
+                                "account_name":"应交税费-应交增值税-销项税额",
+                                "account_number":"22210108",
                                 "included_in_print_rate": 1,
                                 "tax_rate": 13
                             }
@@ -33,8 +33,8 @@
                     "taxes": [
                         {
                             "account_head": {
-                                "account_name":"应交增值税-销项税额",
-                                "account_number":"222100105",
+                                "account_name":"应交税费-应交增值税-销项税额",
+                                "account_number":"22210108",
                                 "included_in_print_rate": 1,
                                 "tax_rate": 3
                             }
@@ -48,8 +48,8 @@
                     "taxes": [
                         {
                             "account_head": {
-                                "account_name":"应交增值税-销项税额",
-                                "account_number":"222100105",
+                                "account_name":"应交税费-应交增值税-销项税额",
+                                "account_number":"22210108",
                                 "included_in_print_rate": 0,
                                 "tax_rate": 13
                             }
@@ -63,8 +63,8 @@
                     "taxes": [
                         {
                             "account_head": {
-                                "account_name":"应交增值税-销项税额",
-                                "account_number":"222100105",
+                                "account_name":"应交税费-应交增值税-销项税额",
+                                "account_number":"22210108",
                                 "included_in_print_rate": 0,
                                 "tax_rate": 3
                             }
@@ -78,8 +78,8 @@
                     "taxes": [
                         {
                             "account_head": {
-                                "account_name":"应交增值税-销项税额",
-                                "account_number":"222100105",
+                                "account_name":"应交税费-应交增值税-销项税额",
+                                "account_number":"22210108",
                                 "included_in_print_rate": 0,
                                 "tax_rate": 0
                             }
@@ -95,7 +95,7 @@
                     "taxes": [
                         {
                             "account_head": {
-                                "account_name":"应交增值税-进项税额",
+                                "account_name":"应交税费-应交增值税-进项税额",
                                 "account_number":"22210101",
                                 "included_in_print_rate": 1,
                                 "tax_rate": 1
@@ -110,7 +110,7 @@
                     "taxes": [
                         {
                             "account_head": {
-                                "account_name":"应交增值税-进项税额",
+                                "account_name":"应交税费-应交增值税-进项税额",
                                 "account_number":"22210101",
                                 "included_in_print_rate": 1,
                                 "tax_rate": 3
@@ -125,7 +125,7 @@
                     "taxes": [
                         {
                             "account_head": {
-                                "account_name":"应交增值税-进项税额",
+                                "account_name":"应交税费-应交增值税-进项税额",
                                 "account_number":"22210101",
                                 "included_in_print_rate": 1,
                                 "tax_rate": 13
@@ -140,7 +140,7 @@
                     "taxes": [
                         {
                             "account_head": {
-                                "account_name":"应交增值税-进项税额",
+                                "account_name":"应交税费-应交增值税-进项税额",
                                 "account_number":"22210101",
                                 "included_in_print_rate": 0,
                                 "tax_rate": 13
@@ -155,7 +155,7 @@
                     "taxes": [
                         {
                             "account_head": {
-                                "account_name":"应交增值税-进项税额",
+                                "account_name":"应交税费-应交增值税-进项税额",
                                 "account_number":"22210101",
                                 "included_in_print_rate": 0,
                                 "tax_rate": 0
