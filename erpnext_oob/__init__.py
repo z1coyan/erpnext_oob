@@ -8,7 +8,7 @@ import frappe
 
 patches_loaded = False
 
-__version__ = '15.0.11'
+__version__ = '15.0.13'
 
 
 def console(*data):

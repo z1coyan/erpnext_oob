@@ -230,3 +230,73 @@ var MyListView = class MyListView extends frappe.views.ListView {
 
 //fisher 解决系统管理账号也显示无权限查看打印格式的问题，因为权限逻辑中判断print format元数据是否存在
 frappe.model.with_doctype('Print Format')
+
+//列表界面底部显示数值类字段总计
+frappe.views.ListView = class ListView extends frappe.views.ListView {
+	render() {
+	  this.render_list();
+	  this.set_rows_as_checked();
+	  this.on_row_checked();
+	  this.render_total();
+	  this.render_count();
+	}
+  
+	render_total() {
+		if (this.columns.filter((col) => {
+			return (col.type === "Field" && col.df && ['Int', 'Float', 'Currency'].includes(col.df.fieldtype))
+		}).length){
+			const $total = this.get_total_html();
+			this.$result.find('.list-row-total').remove();
+			this.$result.append($total);
+		}
+	}
+  
+	get_total_html() {
+	  if (!this.columns) {
+		return;
+	  }
+  
+	  const $columns = this.columns
+		.map((col) => {
+		  let classes = [
+			"list-row-col ellipsis",
+			col.type == "Subject" ? "list-subject level" : "hidden-xs",
+			col.type == "Tag" ? "tag-col hide" : "",
+			frappe.model.is_numeric_field(col.df) ? "text-right" : "",
+		  ].join(" ");
+  
+		  let html = "";
+		  if (col.type === "Subject") {
+			html = `
+			<input class="level-item list-check-all" type="checkbox"
+			  title="${__("Select All")}">
+			  <span class="level-item"><b>${__('Total')}</b></span>`;
+		  }else if (col.type === "Field" && col.df && ['Int', 'Float', 'Currency'].includes(col.df.fieldtype)) {
+			const value = this.data.reduce((sum, next) => sum + (next[col.df.fieldname] || 0), 0);
+			html = `<span>${frappe.format(value, col.df)}</span>`;
+		  }
+  
+		  return `
+		  <div class="${classes}">
+			${html}
+		  </div>
+		`;
+		})
+		.join("");
+  
+	  return this.get_total_html_skeleton($columns, '<span class="list-count"></span>');
+	}
+  
+	get_total_html_skeleton(left = "", right = "") {
+	  return `
+		<footer class="level list-row-head list-row-total text-muted">
+		  <div class="level-left list-header-subject">
+			${left}
+		  </div>
+		  <div class="level-right">
+			${right}
+		  </div>
+		</footer>
+	  `;
+	}
+  }
