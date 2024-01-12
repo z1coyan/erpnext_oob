@@ -2,7 +2,7 @@
     "country_code": "cn",
     "name": "中国企业会计准则",
     "tree": {
-        "资产类": {
+        "资产": {
             "is_group": 1,
             "root_type": "Asset",
             "account_number": "1000",
@@ -293,7 +293,7 @@
                 "account_type": ""
             }
         },
-        "负债类": {
+        "负债": {
             "is_group": 1,
             "root_type": "Liability",
             "account_number": "2000",
@@ -667,7 +667,7 @@
                 "account_type": ""
             }
         },
-        "权益类": {
+        "权益": {
             "is_group": 1,
             "root_type": "Equity",
             "account_number": "4000",
@@ -777,7 +777,7 @@
                 "account_type": "Temporary"
             }
         },
-        "成本类": {
+        "成本": {
             "is_group": 1,
             "root_type": "Expense",
             "account_number": "5000",
@@ -914,7 +914,7 @@
                 "account_type": ""
             }
         },
-        "收入类": {
+        "收入": {
             "is_group": 1,
             "root_type": "Income",
             "account_number": "6000",
@@ -1001,7 +1001,7 @@
             }
         },
 
-        "费用类": {
+        "费用": {
             "is_group": 1,
             "root_type": "Expense",
             "account_number": "6010",
