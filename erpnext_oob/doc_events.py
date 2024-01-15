@@ -27,4 +27,5 @@ def company_create_default_accounts(doc, method):
         frappe.local.flags.ignore_chart_of_accounts = True      #bypass system to set default accounts
         import_coa(doc.name, doc.chart_of_accounts)        
 
-    
+def delivery_note_on_cancel(doc, method):
+    doc.ignore_linked_doctypes = ("Batch Sales Return", "Repost Item Revaluation")

@@ -22,9 +22,10 @@ class BatchSalesReturn(Document):
 		for row in self.items:
 			dn_qty = dn_map.get((row.delivery_note, row.item_code))
 			row.error = ''
+			row.return_qty = abs(row.return_qty) * -1
 			if not dn_qty:
 				row.error = _('dn and item code not valid, either dn is not submitted or already returned')
-			elif row.return_qty > dn_qty:
+			elif abs(row.return_qty) > dn_qty:
 				row.error = _('Return Qty greater than delivery qty')
 
 	def on_submit(self):
@@ -44,6 +45,7 @@ class BatchSalesReturn(Document):
 		
 		for (dn, items_dict) in dn_map.items():
 			return_dn = make_sales_return(dn)
+			#globals().update(locals())
 			return_dn.items = [row for row in return_dn.items if row.item_code in items_dict]
 			for row in return_dn.items:
 				row.qty = items_dict.get(row.item_code)
