@@ -1,5 +1,6 @@
 import frappe
 from pypinyin import lazy_pinyin
+from erpnext_oob.monkey_patches.data import money_in_words_zh
 
 
 @frappe.whitelist()
@@ -18,3 +19,7 @@ def get_posting_date_month(doc, month_key):
 
     if month_key in ('m_posting_date', 'm_posting_date', 'y_posting_date', 'Y_posting_date') and doc.posting_date:
         return frappe.utils.getdate(doc.posting_date).strftime(f"%{month_key[0]}")
+
+@frappe.whitelist()
+def money_in_words(number, main_currency = None, fraction_currency=None):
+    return money_in_words_zh(number = number, main_currency = main_currency, fraction_currency = fraction_currency)
