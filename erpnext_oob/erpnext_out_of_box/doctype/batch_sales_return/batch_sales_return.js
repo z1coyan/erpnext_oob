@@ -13,7 +13,10 @@ frappe.ui.form.on('Batch Sales Return', {
 			}
 		});		
 	},
-	onload(frm){
+	onload(frm){		
+		if (frm.is_new() && (!frm.doc.items || frm.doc.items.length <=0)){
+				frm.add_child("items");
+		}
 		frappe.realtime.on('batch_created_sales_return', async function(data) {
 			await frm.reload_doc();
 			frm.trigger('show_return_delivery_list');	

@@ -3,6 +3,7 @@
 
 import frappe
 from frappe import _
+from frappe.utils import flt
 from frappe.model.document import Document
 from erpnext.stock.doctype.delivery_note.delivery_note import make_sales_return
 
@@ -14,15 +15,17 @@ class BatchSalesReturn(Document):
 		dn_list = frappe.get_all('Delivery Note',
 			filters = {'name': ('in', {row.delivery_note for row in self.items}),
 						'docstatus': 1,
-						'company': self.company,
-						'status': ('not in', ('Return Issued'))},
+						'company': self.company,						
+						'status': ('not in', ('Return Issued')),
+						'returned_qty': 0	
+						},
 			fields = ['name','`tabDelivery Note Item`.item_code','`tabDelivery Note Item`.qty']
 		)
 		dn_map = {(row.name,row.item_code):row.qty for row in dn_list}
 		for row in self.items:
 			dn_qty = dn_map.get((row.delivery_note, row.item_code))
 			row.error = ''
-			row.return_qty = abs(row.return_qty) * -1
+			row.return_qty = abs(flt(row.return_qty)) * -1
 			if not dn_qty:
 				row.error = _('dn and item code not valid, either dn is not submitted or already returned')
 			elif abs(row.return_qty) > dn_qty:
