@@ -26,7 +26,7 @@ frappe.ui.form.on('Batch Sales Return', {
 		const return_dns = frm.doc.items.map(r=>{return r.return_dn});
 		if (return_dns && return_dns.length) {
 			frappe.route_options = {
-				"name": ['in', return_dns]
+				"name": ['in', Array.from(new Set(return_dns))]
 			}
 			frappe.set_route('List', 'Delivery Note');						
 		}
