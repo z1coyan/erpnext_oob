@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import os
 import importlib
 
-import frappe
+
 
 patches_loaded = False
 
@@ -12,10 +12,12 @@ __version__ = '14.0.32'
 
 
 def console(*data):
+    import frappe
     frappe.publish_realtime("out_to_console", data, user=frappe.session.user)
 
 
 def load_monkey_patches():
+    import frappe
     global patches_loaded
 
     if (
@@ -40,17 +42,20 @@ def load_monkey_patches():
     patches_loaded = True
 
 
-connect = frappe.connect
+try:
+    import frappe # XXX 要验证是否安装的库名
+    
+    connect = frappe.connect
 
+    def custom_connect(*args, **kwargs):
+        out = connect(*args, **kwargs)
 
-def custom_connect(*args, **kwargs):
-    out = connect(*args, **kwargs)
+        if frappe.conf.auto_commit_on_many_writes:
+            frappe.db.auto_commit_on_many_writes = 1
 
-    if frappe.conf.auto_commit_on_many_writes:
-        frappe.db.auto_commit_on_many_writes = 1
+        load_monkey_patches()
+        return out
 
-    load_monkey_patches()
-    return out
-
-
-frappe.connect = custom_connect
+    frappe.connect = custom_connect
+except ImportError:
+    pass
