@@ -185,10 +185,7 @@ doc_events = {
     "Company": {
  		"after_insert": "erpnext_oob.doc_events.company_create_default_accounts",
         "validate": "erpnext_oob.doc_events.company_create_default_accounts"
-	},
-    "Delivery Note":{
-        "on_cancel":"erpnext_oob.doc_events.delivery_note_on_cancel"
-    }
+	}
 }
 
 naming_series_variables = {
