@@ -1,9 +1,9 @@
 import frappe
 from frappe.utils import cint
-from frappe.permissions import rights, allow_everything
+from frappe.permissions import rights, allow_everything, _debug_log
 from frappe import permissions
 
-def custom_get_role_permissions(doctype_meta, user=None, is_owner=None):
+def custom_get_role_permissions(doctype_meta, user=None, is_owner=None, debug=False):
 	"""
 	Returns dict of evaluated role permissions like
 	        {
@@ -27,12 +27,14 @@ def custom_get_role_permissions(doctype_meta, user=None, is_owner=None):
 	cache_key = (doctype_meta.name, user, bool(is_owner))
 
 	if user == "Administrator":
+		debug and _debug_log("all permissions granted because user is Administrator")
 		return allow_everything()
 
-	if not frappe.local.role_permissions.get(cache_key):
+	if not frappe.local.role_permissions.get(cache_key) or debug:
 		perms = frappe._dict(if_owner={})
 
 		roles = frappe.get_roles(user)
+		debug and _debug_log("User has following roles: " + str(roles))
 
 		def is_perm_applicable(perm):
 			return perm.role in roles and cint(perm.permlevel) == 0
