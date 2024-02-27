@@ -58,5 +58,6 @@ naming_series_variables = {
     "d_posting_date": "erpnext_oob.api.get_posting_date_month",
     "m_posting_date": "erpnext_oob.api.get_posting_date_month",
     "y_posting_date": "erpnext_oob.api.get_posting_date_month",
-    "Y_posting_date": "erpnext_oob.api.get_posting_date_month"
+    "Y_posting_date": "erpnext_oob.api.get_posting_date_month",
+    "company_abbr": "erpnext_oob.api.get_company_abbr"
 }
