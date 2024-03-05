@@ -14,6 +14,8 @@ def get_user_default():
 
 @frappe.whitelist()
 def get_print_format(doc):
+    from frappe.utils.safe_exec import get_safe_globals
+
     if not frappe.db.has_column('Print Format', 'condition_for_default'):
         return
 
@@ -27,7 +29,7 @@ def get_print_format(doc):
                                         order_by = 'priority', as_list = 1)
 
     for (print_format, condition) in print_format_list:
-        if condition and frappe.safe_eval(condition, None, dict(doc=doc, get_roles = frappe.get_roles)):
+        if condition and frappe.safe_eval(condition, get_safe_globals(), dict(doc=doc, get_roles = frappe.get_roles)):
             return print_format
 
 @frappe.whitelist()
