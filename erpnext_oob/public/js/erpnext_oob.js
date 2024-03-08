@@ -300,3 +300,17 @@ frappe.views.ListView = class ListView extends frappe.views.ListView {
 	  `;
 	}
   }
+
+// 首先，保存原始的 plural 函数
+var originalPlural = String.prototype.plural;
+
+// 然后，定义新的 plural 函数
+String.prototype.plural = function (revert) {
+  // 如果 frappe.boot.lang 为 'zh'，则返回空值
+  if (frappe.boot.lang === 'zh') {
+    return this;
+  }
+
+  // 否则，调用被覆盖前的函数
+  return originalPlural.call(this, revert);
+};
