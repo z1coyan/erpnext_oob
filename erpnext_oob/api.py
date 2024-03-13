@@ -17,7 +17,7 @@ def get_posting_date_month(doc, month_key):
        Y_posting_date = > 2023
     """
 
-    if month_key in ('d_posting_date', 'm_posting_date', 'y_posting_date', 'Y_posting_date') and doc.posting_date:
+    if month_key in ('d_posting_date', 'm_posting_date', 'y_posting_date', 'Y_posting_date') and hasattr(doc, "posting_date"):
         return frappe.utils.getdate(doc.posting_date).strftime(f"%{month_key[0]}")
 
 def get_company_abbr(doc, month_key):    
