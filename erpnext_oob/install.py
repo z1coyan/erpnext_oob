@@ -63,7 +63,7 @@ def after_install():
                 'uom_name': uom,
                 'enabled': 1}).insert(ignore_permissions = 1)
         frappe.db.set_value('UOM',{'name': ('not in', uom_list)},'enabled', 0)
-        frappe.db.set_value('System Settings','','enable_onboarding',0)
+        frappe.db.set_single_value('System Settings','enable_onboarding',0)
         frappe.db.commit()
     except:
         pass
