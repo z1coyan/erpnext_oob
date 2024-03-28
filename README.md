@@ -104,6 +104,8 @@ d_posting_date = > 18
 m_posting_date = > 09
 y_posting_date = > 23
 Y_posting_date = > 2023
+
+4.5 批量销售退货
  
 本人在discuss.erpnext.com及github.com官网帐号是szufisher
 
