@@ -20,6 +20,10 @@ doctype_js = {
     "Company":"public/js/company.js"
 }
 
+doctype_list_js = {
+    "Stock Entry":"public/js/stock_entry.js"
+}
+
 setup_wizard_requires = "assets/erpnext_oob/js/setup_wizard.js"
 
 standard_queries = {

@@ -74,7 +74,6 @@ DEC,十二月
 Sort Ascending,升序
 Sort Descending,倒序
 Reset sorting,重置排序
-Remove column,移除列
 Lists,列表
 Reports,报表
 Setup,设置
@@ -94,7 +93,6 @@ Skip,跳过
 Dismiss,移除
 {} Draft,{} 草稿
 "Ex: ""colors"": [""#d1d8dd"", ""#ff5858""]","例如: ""colors"": [""#d1d8dd"", ""#ff5858""]"
-Value,值,Dashboard Chart
 yesterday,昨天
 Dr,借方
 Cr,贷方
