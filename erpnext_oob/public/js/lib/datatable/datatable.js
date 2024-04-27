@@ -95,7 +95,7 @@ let MyQueryReport = class MyQueryReport extends frappe.views.QueryReport {
 	}
 }
 
-frappe.views.QueryReport = MyQueryReport
+//frappe.views.QueryReport = MyQueryReport
 
 let MyReportView = class MyReportView extends frappe.views.ReportView {
     setup_datatable(values) {
@@ -193,7 +193,7 @@ let MyReportView = class MyReportView extends frappe.views.ReportView {
 	}
 }
 
-frappe.views.ReportView = MyReportView
+//frappe.views.ReportView = MyReportView
 
 // 这个数据导入的是动态加载的，在这里会找不到frappe.data_import.ImportPreview，
 // 这个是放doctype: core/doctype/data_import_beta里面的，应该不会用到，用到再说的话，用doctype的hooks应该可以解决

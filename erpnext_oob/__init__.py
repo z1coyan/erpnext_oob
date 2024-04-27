@@ -8,7 +8,7 @@ import frappe
 
 patches_loaded = False
 
-__version__ = '15.0.20'
+__version__ = '15.0.21'
 
 
 def console(*data):
@@ -27,9 +27,11 @@ def load_monkey_patches():
 
     for app in frappe.get_installed_apps():
         if app in ['frappe', 'erpnext']: continue
-
-        folder = frappe.get_app_path(app, "monkey_patches")
-        if not os.path.exists(folder): continue
+        try:
+            folder = frappe.get_app_path(app, "monkey_patches")
+            if not os.path.exists(folder): continue
+        except:
+            frappe.log(f'{app} load failed in erpnext_oob, check whether you removed the app')
 
         for module_name in os.listdir(folder):
             if not module_name.endswith(".py") or module_name == "__init__.py":
