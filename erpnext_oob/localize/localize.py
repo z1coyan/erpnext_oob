@@ -25,6 +25,7 @@ def import_coa(company, chart_template = None):
 	create_charts(company, custom_chart=forest, from_coa_importer=from_coa_importer)
 	set_default_accounts(company)
 	set_global_defaults()
+	set_system_settings()
 	change_field_property()
 	setup_tax_template(company)
 	setup_tax_rule(company)
@@ -77,6 +78,14 @@ def set_global_defaults():
 	frappe.db.set_single_value('Global Defaults',{'disable_rounded_total':1,
 											'disable_in_words':1}
 						)
+
+def set_system_settings():
+	frappe.db.set_single_value('System Settings',
+		{
+			'rounding_method': 'Commercial Rounding',
+			'allow_login_using_user_name': 1,
+			'allow_login_using_mobile_number': 1
+	})
 
 def change_field_property():
 	if bool(frappe.db.get_single_value('System Settings', 'setup_complete')):
