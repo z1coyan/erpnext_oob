@@ -134,6 +134,13 @@
                 "account_type": "Stock",
                 "tax_rate": ""
             },
+            "发出商品": {
+                "is_group": "",
+                "root_type": "",
+                "account_number": 1406,
+                "account_type": "Stock",
+                "tax_rate": ""
+            },            
             "商品进销差价": {
                 "is_group": "",
                 "root_type": "",

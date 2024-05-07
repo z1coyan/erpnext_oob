@@ -41,7 +41,8 @@ override_whitelisted_methods = {
 after_install = "erpnext_oob.install.after_install"
 
 override_doctype_class = {
-	"Communication": "erpnext_oob.overrides.CustomCommunication"
+	"Communication": "erpnext_oob.overrides.CustomCommunication",
+    "Data Import": "erpnext_oob.overrides.CustomDataImport"
 }
 
 doc_events = {

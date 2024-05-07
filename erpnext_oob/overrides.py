@@ -1,6 +1,7 @@
 import frappe
 from frappe.core.doctype.communication.communication import Communication
 from frappe.core.doctype.file.utils import extract_images_from_html
+from frappe.core.doctype.data_import.data_import import DataImport
 
 class CustomCommunication(Communication):
     def get_content(self, print_format=None):
@@ -24,4 +25,11 @@ def update_comment(name, content):
 		doc.content = extract_images_from_html(reference_doc, content, is_private=True)
 	else:
 		doc.content = content
-	doc.save(ignore_permissions=True)        
+	doc.save(ignore_permissions=True)
+
+class CustomDataImport(DataImport):
+	def validate_doctype(self):
+		"""允许属性设置批量导入"""
+		
+		if self.reference_doctype != "Property Setter":
+			super().validate_doctype()
