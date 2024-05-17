@@ -75,17 +75,24 @@ def set_default_accounts(company):
 	return values
 
 def set_global_defaults():
-	frappe.db.set_single_value('Global Defaults',{'disable_rounded_total':1,
-											'disable_in_words':1}
-						)
+	frappe.db.set_single_value('Global Defaults',
+		{
+			'disable_rounded_total':1,
+			'disable_in_words':1
+		}
+	)
 
 def set_system_settings():
 	frappe.db.set_single_value('System Settings',
 		{
 			'rounding_method': 'Commercial Rounding',
 			'allow_login_using_user_name': 1,
-			'allow_login_using_mobile_number': 1
-	})
+			'allow_login_using_mobile_number': 1,
+			'currency_precision': 2,
+			'float_precision': 4,
+			'date_format': 'yyyy-mm-dd'
+		}
+	)
 
 def change_field_property():
 	if bool(frappe.db.get_single_value('System Settings', 'setup_complete')):

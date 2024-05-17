@@ -59,7 +59,15 @@ frappe.ui.form.ControlTable = class ControlTable extends frappe.ui.form.ControlT
                                 //fisher 保存文本编辑器字段的回车换行
                                 if (value) {
                                     const fieldtype = frappe.meta.get_field(doctype,fieldname).fieldtype;
-						            value = (fieldtype && fieldtype ==='Text Editor')? value.replace(/[\n\r]/g,'<br>') : value;
+									if (fieldtype){
+										if (fieldtype ==='Text Editor') {
+											value = value.replace(/[\n\r]/g,'<br>');
+										} else if (['Float', 'Currency'].includes(fieldtype)) {
+											value = parseFloat(value);
+										} else if (fieldtype ==='Int') {
+											value = parseInt(value);
+										}
+									}									
                                  };
 								frappe.model.set_value(doctype, row_name, fieldname, value);
 							}
