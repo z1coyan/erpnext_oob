@@ -400,98 +400,21 @@ frappe.ui.form.ControlAutocomplete = class ControlAutocomplete extends frappe.ui
 	}
 }
 
-// const MyControlMultiSelect = frappe.ui.form.ControlMultiSelect.extend({
-// 	get_awesomplete_settings() {
-// 		var me = this;
-// 		this.$input.on("awesomplete-select", function(e) {
-// 			var o = e.originalEvent;
-// 			var item = me.awesomplete.get_item(o.text.value);
-
-// 			me.autocomplete_open = false;
-
-// 			// prevent selection on tab
-// 			var TABKEY = 9;
-// 			if(e.keyCode === TABKEY) {
-// 				e.preventDefault();
-// 				me.awesomplete.close();
-// 				return false;
-// 			}
-
-// 			if(item.action) {
-// 				item.value = "";
-// 				item.action.apply(me);
-// 			}
-
-// 			// if remember_last_selected is checked in the doctype against the field,
-// 			// then add this value
-// 			// to defaults so you do not need to set it again
-// 			// unless it is changed.
-// 			if(me.df.remember_last_selected_value) {
-// 				frappe.boot.user.last_selected_values[me.df.options] = item.value;
-// 			}
-// 			me.parse_validate_and_set_in_model(item.value);
-			
-// 		});
-// 		const settings = this._super();
-// 		return Object.assign(settings, {
-// 			data: function (item) {
-// 				return {
-// 					label: item.label || item.value,
-// 					value: item.value
-// 				};
-// 			},
-// 			item: function (item) {
-// 				var d = this.get_item(item.value);
-// 				if(!d.label) {	d.label = d.value; }
-
-// 				var _label = __(d.label);
-// 				var html = d.html || "<strong>" + _label + "</strong>";
-// 				return $('<li></li>')
-// 					.data('item.autocomplete', d)
-// 					.prop('aria-selected', 'false')
-// 					.html(`<a><p title="${_label}">${html}</p></a>`)
-// 					.get(0);
-// 			},
-// 			replace: function(text) {
-// 				const before = this.input.value.match(/^.+,\s*|/)[0];
-// 				this.input.value = before + text + ", ";
-// 			}
-// 		});
-// 	},
-// 	get_selected_value: function(translated){				
-// 		let options = this.df.options || [];
-// 		if(typeof this.df.options==="string") {
-// 			options = this.df.options.split("\n");
-// 		}
-// 		let input = this.input.value;		
-// 		input = input.split(',').map(op => op.trim()).filter(n => n != null && n !="");		
-// 		let get_single = (val)=>{
-// 			for (var option of options){
-// 				//console.log('option and val', option, __(option), val);
-// 				if (option === val || __(option) === val){
-// 					return translated? __(option): option
-// 				}
-// 			}
-// 			return null;
-// 		}
-// 		input = input.map(val =>{return get_single(val)}).filter(n => n != null).join(', ');
-// 		return input && translated?  input + ", ": input
-// 	},
-//     // 每次传进来的是单个值，之前的val()长这样 选项1中文,english option2, 
-//     set_formatted_input: function(value) {		
-// 		if (!value && this.input && ! this.input.value) return;
-// 		let data = this.get_selected_value(true);		
-// 		this.$input && this.$input.val(this.format_for_input(data));
-// 	},
-
-// 	// 获取本来的值
-// 	get_value() {		
-// 		let data = this.get_selected_value(false);		
-// 		return data;
-// 	}
-// })
-
-// //frappe.ui.form.ControlMultiSelect = MyControlMultiSelect
+frappe.ui.form.ControlMultiSelect = class ControlMultiSelect extends frappe.ui.form.ControlMultiSelect {
+	get_value() {
+		if (this.$input) {
+			const label = this.$input.val();	// '进行中,草稿, ';  			  
+			// 清理字符串，去除尾随空格并分割成数组  
+			const labels = label.trim().split(',').map(label => label.trim());  			  
+			// 使用map和find找到对应的value  
+			const values = labels.map(label => {  
+				const item = this._data?.find(item => item.label === label);  
+				return item ? item.value : ''; // 如果没有找到对应的label，则返回空字符串  
+			}).filter(value => value !== '');  
+			return values && values.length>0 ? values.join(',') : label;  //将values数组转换回逗号分隔的字符串  			
+		}
+	}
+}
 
 frappe.ui.FieldSelect = class FieldSelect extends frappe.ui.FieldSelect {
 	//fisher 支持中英文检索
