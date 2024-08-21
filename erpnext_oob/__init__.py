@@ -29,15 +29,13 @@ def load_monkey_patches():
         if app in ['frappe', 'erpnext']: continue
         try:
             folder = frappe.get_app_path(app, "monkey_patches")
-            if not os.path.exists(folder): continue
+            if os.path.exists(folder):
+                for module_name in os.listdir(folder):
+                    if not module_name.endswith(".py") or module_name == "__init__.py":
+                        continue
+                    importlib.import_module(f"{app}.monkey_patches.{module_name[:-3]}")
         except:
-            frappe.log(f'{app} load failed in erpnext_oob, check whether you removed the app')
-
-        for module_name in os.listdir(folder):
-            if not module_name.endswith(".py") or module_name == "__init__.py":
-                continue
-
-            importlib.import_module(f"{app}.monkey_patches.{module_name[:-3]}")
+            frappe.log(f'{app} load failed in erpnext_oob, check whether you removed the app')        
 
     patches_loaded = True
 
