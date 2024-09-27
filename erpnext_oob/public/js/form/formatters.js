@@ -20,7 +20,9 @@ frappe.form.formatters.Data = function(value, df) {
 		if (!value) return;
 		return `<a href="${value}" title="Open Link" target="_blank">${value}</a>`;
 	}
-	value = value == null ? "" : __(value);
+	if (df && df.translatable) {
+		value = value == null ? "" : __(value);
+	}
 
 	return frappe.form.formatters._apply_custom_formatter(value, df);	
 }

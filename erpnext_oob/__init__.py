@@ -8,7 +8,7 @@ import frappe
 
 patches_loaded = False
 
-__version__ = '15.0.26'
+__version__ = '15.0.27'
 
 
 def console(*data):
@@ -35,6 +35,8 @@ def load_monkey_patches():
                         continue
                     importlib.import_module(f"{app}.monkey_patches.{module_name[:-3]}")
         except:
+            traceback = frappe.get_traceback(with_context=True)
+            frappe.log_error(f"Failed load app {app} monkey patches", traceback)            
             frappe.log(f'{app} load failed in erpnext_oob, check whether you removed the app')        
 
     patches_loaded = True
