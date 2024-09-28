@@ -20,7 +20,8 @@ frappe.form.formatters.Data = function(value, df) {
 		if (!value) return;
 		return `<a href="${value}" title="Open Link" target="_blank">${value}</a>`;
 	}
-	if (df && df.translatable) {
+	//表单中的子表单仅限启用了可翻译的数据字段才调用翻译函数
+	if (frappe.get_route_str().includes('query-report') || df && df.translatable) {
 		value = value == null ? "" : __(value);
 	}
 
